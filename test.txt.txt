@@ -3,4 +3,8 @@ sdfgsdfgsdfg
 
 내가 바꿔봄
 
+<<<<<<< HEAD
  수정1111
+=======
+바꿈22
+>>>>>>> yeonsoo
