@@ -24,14 +24,17 @@ api...
 
 
 CREATE TABLE USER(
-아이디 (PRI)
-비밀번호
-이름
-폰번호
-닉네임
-프로필사진
-이메일(생각)
+	USERID VARCHAR2(100), --아이디 (PRI)
+	USERPWD VARCHAR2(100), --비밀번호
+	USERNAME VARCHAR2(100), --이름
+	USERPHONE VARCHAR2(50), --폰번호
+	USERNICK VARCHAR2(100), --닉네임
+	USERPHOTO VARCHAR2(100), --프로필사진
+	USEREMAIL VARCHAR2(100) --이메일(생각)
 );
+
+
+
 
 --주차장 테이블
 주차장 관리번호
