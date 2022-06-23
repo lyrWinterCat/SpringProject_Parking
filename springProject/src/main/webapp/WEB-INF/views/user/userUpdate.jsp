@@ -78,21 +78,18 @@
 			</div>
 		</div>
 		<!-- END LEFT SIDEBAR -->
-		<!-- MAIN -->
+			<!-- MAIN -->
 		<div class="main">
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
-				<div class="container-fluid">
-					<!-- OVERVIEW -->
-					<div class="panel panel-headline">
-						<div class="panel-heading">
-							<h3 class="panel-title">주차장 / 커뮤니티 임시공간</h3>
-							<p class="panel-subtitle">Period: 2022.06.22</p>
-						</div>
-
-					</div>
-					<!-- END OVERVIEW -->					
+						
+				<div align="center">
+					<h1>회원정보 수정</h1>
+					<form action="join_ok.jsp" method="post">
+						<p>회원정보 수정구간</p>		
+					</form>
 				</div>
+		<!-- 네이버 연동 회원가입 구현 -->
 			</div>
 			<!-- END MAIN CONTENT -->
 		</div>
@@ -113,8 +110,21 @@
 	<script src="resources/assets/vendor/chartist/js/chartist.min.js"></script>
 	<script src="resources/assets/scripts/klorofil-common.js"></script>
 	<script>
-	
 	</script>
+	<style>
+		.image-box{
+			border:3px solid;
+			width: 300px;
+			height: 300px;
+			overflow:hidden;
+			margin:0 auto;
+		}
+		.img-thumbnail{
+			width:100%;
+			height:100%;
+			object-fit:cover;
+		}
+	</style>
 </body>
 
 </html>

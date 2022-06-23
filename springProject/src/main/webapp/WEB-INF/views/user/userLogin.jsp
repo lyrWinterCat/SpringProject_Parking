@@ -44,6 +44,7 @@
 				<div class="navbar-btn navbar-btn-right">
 					<p>임시구역</p>
 				</div>
+
 			</div>
 		</nav>
 		<!-- END NAVBAR -->
@@ -78,21 +79,26 @@
 			</div>
 		</div>
 		<!-- END LEFT SIDEBAR -->
-		<!-- MAIN -->
+			<!-- MAIN -->
 		<div class="main">
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
-				<div class="container-fluid">
-					<!-- OVERVIEW -->
-					<div class="panel panel-headline">
-						<div class="panel-heading">
-							<h3 class="panel-title">주차장 / 커뮤니티 임시공간</h3>
-							<p class="panel-subtitle">Period: 2022.06.22</p>
-						</div>
-
-					</div>
-					<!-- END OVERVIEW -->					
+						
+				<div align="center">
+					<h3>로그인 페이지 입니당</h3>
+	
+					<form action="login_ok.jsp" method="post">
+						아이디:<input type="text" name="id"><br/>
+						비밀번호:<input type="password" name="pw"><br/>
+						<input type="submit" value="로그인"><br/>
+						<input type="checkbox" value="autologin">자동으로 로그인하기
+					</form>
+				<button>네이버 아이디로 로그인</button>
+				<button>아이디 / 비밀번호 찾기</button>
+	
+	<!-- 네이버 연동 로그인 구현 -->
 				</div>
+		<!-- 네이버 연동 회원가입 구현 -->
 			</div>
 			<!-- END MAIN CONTENT -->
 		</div>
@@ -113,8 +119,21 @@
 	<script src="resources/assets/vendor/chartist/js/chartist.min.js"></script>
 	<script src="resources/assets/scripts/klorofil-common.js"></script>
 	<script>
-	
 	</script>
+	<style>
+		.image-box{
+			border:3px solid;
+			width: 300px;
+			height: 300px;
+			overflow:hidden;
+			margin:0 auto;
+		}
+		.img-thumbnail{
+			width:100%;
+			height:100%;
+			object-fit:cover;
+		}
+	</style>
 </body>
 
 </html>

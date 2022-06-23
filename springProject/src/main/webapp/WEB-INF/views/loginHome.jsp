@@ -44,6 +44,23 @@
 				<div class="navbar-btn navbar-btn-right">
 					<p>임시구역</p>
 				</div>
+				<div id="navbar-menu">
+					<ul class="nav navbar-nav navbar-right">
+
+						<!-- 
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="resources/assets/img/user.png" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
+								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
+								<li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>
+								<li><a href="#"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+							</ul>
+						</li>
+						 -->
+
+					</ul>
+				</div>
 			</div>
 		</nav>
 		<!-- END NAVBAR -->
@@ -53,9 +70,9 @@
 				<nav>
 					<ul class="nav">
 						<div style="text-align:center; font-size:30px;">
-							<li><img src="resources/assets/img/user.png" class="img-circle" alt="Avatar" style="width : 90%; margin-top : 10px;"> <span>Admin</span></li>
+						<li><img src="resources/assets/img/user.png" class="img-circle" alt="Avatar" style="width : 90%; margin-top : 10px;"> <span>Admin</span></li>
 						</div>
-						<li><a href="parking" class="active"><i class="lnr lnr-home"></i> <span>메인화면</span></a></li>
+						<li><a href="index.html" class="active"><i class="lnr lnr-home"></i> <span>메인화면</span></a></li>
 						<li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i> <span>공지사항</span></a></li>
 						<li><a href="charts.html" class=""><i class="lnr lnr-chart-bars"></i> <span>즐겨찾는 주차장</span></a></li>
 						<li>
@@ -68,11 +85,11 @@
 								</ul>
 							</div>
 						</li>
-						<li><a href="userLogin" class=""><i class="lnr lnr-code"></i> <span>로그인</span></a></li>
 						<li><a href="userUpdate" class=""><i class="lnr lnr-cog"></i> <span>회원정보 변경</span></a></li>
-						<li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>임시자리</span></a></li>
+						<li><a href="userLogout" class=""><i class="lnr lnr-code"></i> <span>로그아웃</span></a></li>
 						<li><a href='userSignUp' class=""><i class="lnr lnr-dice"></i> <span>회원가입</span></a></li>
-						<li><a href="userDelete" class=""><i class="lnr lnr-text-format"></i> <span>회원 탈퇴</span></a></li>
+						<li><a href="typography.html" class=""><i class="lnr lnr-text-format"></i> <span>임시자리</span></a></li>
+						<li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>임시자리</span></a></li>
 					</ul>
 				</nav>
 			</div>
