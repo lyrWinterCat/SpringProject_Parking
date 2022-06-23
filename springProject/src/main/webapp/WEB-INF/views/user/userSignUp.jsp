@@ -86,6 +86,7 @@
 				<div align="center">
 					<h1>회원가입</h1>
 					<form action="join_ok.jsp" method="post">
+					<div id="text-box">
 						아이디:<input type="text" name="userId">
 						<button>중복 검사</button>
 						<br/>
@@ -103,7 +104,7 @@
 						<button>이메일 인증</button> <br>
 		
 						닉네임 : <input type="text" name="userNick"><button>중복 검사</button><br><br>
-						
+					</div>
 						프로필 사진 선택 <input type="file" name="userPhoto"><br>
 						
 						<div id="userImg" align="center">
@@ -142,6 +143,7 @@
 	<script>
 	</script>
 	<style>
+
 		.image-box{
 			border:3px solid;
 			width: 300px;
