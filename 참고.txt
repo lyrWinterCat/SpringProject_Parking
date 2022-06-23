@@ -1,0 +1,33 @@
+https://victorydntmd.tistory.com/91
+>> 깃허브 브런치 개념
+
+https://fomaios.tistory.com/entry/Git-Github-%EA%B0%99%EC%9D%80-%EC%A0%80%EC%9E%A5%EC%86%8C-%ED%95%A8%EA%BB%98-%EC%93%B0%EA%B8%B0feat%ED%98%91%EC%97%85%ED%95%98%EA%B8%B0
+
+구현
+
+
+메인 패키지
+com.project.parking.controller
+
+com.project.parking.vo
+com.project.parking.dao
+
+pom.xml파일 공유
+
+
+db
+
+lombok / @data
+
+* 필요 라이브러리 / 어노테이션 / 기능구현 조사해오기
+
+
+기본색 *초록색 노란색*
+회원가입/ 로그인 / 회원정보 변경/에러처리 (404, 500) 구현
+중복검사 / 정규화 (전화번호)
+아이디, 비밀번호, 닉네임, 사진, 핸드폰번호, 이메일(?)
+
+가능하다면
+* 로그인 - 네이버 연동
+인증 >> 번호 / 이메일
+
