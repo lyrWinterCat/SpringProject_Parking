@@ -44,7 +44,6 @@
 				<div class="navbar-btn navbar-btn-right">
 					<p>임시구역</p>
 				</div>
-				
 			</div>
 		</nav>
 		<!-- END NAVBAR -->
@@ -54,26 +53,26 @@
 				<nav>
 					<ul class="nav">
 						<div style="text-align:center; font-size:30px;">
-						<li><img src="resources/assets/img/user.png" class="img-circle" alt="Avatar" style="width : 90%; margin-top : 10px;"> <span>User01</span></li>
+							<li><img src="resources/assets/img/user.png" class="img-circle" alt="Avatar" style="width : 90%; margin-top : 10px;"> <span>Admin</span></li>
 						</div>
-						<li><a href="index.html" class="active"><i class="lnr lnr-home"></i> <span>메인화면</span></a></li>
+						<li><a href="parking" class="active"><i class="lnr lnr-home"></i> <span>메인화면</span></a></li>
 						<li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i> <span>공지사항</span></a></li>
 						<li><a href="charts.html" class=""><i class="lnr lnr-chart-bars"></i> <span>즐겨찾는 주차장</span></a></li>
 						<li>
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>커뮤니티</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
-									<li><a href="page-profile.html" class="">후기 게시판</a></li>
+									<li><a href="reviewB" class="">후기 게시판</a></li>
 									<li><a href="page-login.html" class="">자유 게시판</a></li>
 									<li><a href="page-lockscreen.html" class="">맛집 추천</a></li>
 								</ul>
 							</div>
 						</li>
-						<li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>회원정보 변경</span></a></li>
-						<li><a href="elements.html" class=""><i class="lnr lnr-code"></i> <span>로그아웃</span></a></li>
-						<li><a href="tables.html" class=""><i class="lnr lnr-dice"></i> <span>회원가입</span></a></li>
-						<li><a href="typography.html" class=""><i class="lnr lnr-text-format"></i> <span>임시자리</span></a></li>
+						<li><a href="userLogin" class=""><i class="lnr lnr-code"></i> <span>로그인</span></a></li>
+						<li><a href="userUpdate" class=""><i class="lnr lnr-cog"></i> <span>회원정보 변경</span></a></li>
 						<li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>임시자리</span></a></li>
+						<li><a href='userSignUp' class=""><i class="lnr lnr-dice"></i> <span>회원가입</span></a></li>
+						<li><a href="userDelete" class=""><i class="lnr lnr-text-format"></i> <span>회원 탈퇴</span></a></li>
 					</ul>
 				</nav>
 			</div>
@@ -83,12 +82,17 @@
 		<div class="main">
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
-				<h1>후기게시판</h1>
-				<table>
-					<tr>
-						<th></th>
-					</tr>
-				</table>
+				<div class="container-fluid">
+					<!-- OVERVIEW -->
+					<div class="panel panel-headline">
+						<div class="panel-heading">
+							<h3 class="panel-title">주차장 / 커뮤니티 임시공간</h3>
+							<p class="panel-subtitle">Period: 2022.06.22</p>
+						</div>
+
+					</div>
+					<!-- END OVERVIEW -->					
+				</div>
 			</div>
 			<!-- END MAIN CONTENT -->
 		</div>
