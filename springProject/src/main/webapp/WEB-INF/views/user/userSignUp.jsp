@@ -2,7 +2,7 @@
 <%@ page session="false" pageEncoding="utf-8"%>
 <html>
 <head>
-	<title> 주차장 찾기 템플릿</title>
+	<title>부평 야간 주차장 도우미</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -78,21 +78,48 @@
 			</div>
 		</div>
 		<!-- END LEFT SIDEBAR -->
-		<!-- MAIN -->
+			<!-- MAIN -->
 		<div class="main">
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
-				<div class="container-fluid">
-					<!-- OVERVIEW -->
-					<div class="panel panel-headline">
-						<div class="panel-heading">
-							<h3 class="panel-title">주차장 / 커뮤니티 임시공간</h3>
-							<p class="panel-subtitle">Period: 2022.06.22</p>
+						
+				<div align="center">
+					<h1>회원가입</h1>
+					<form action="join_ok.jsp" method="post">
+						아이디:<input type="text" name="userId">
+						<button>중복 검사</button>
+						<br/>
+						비밀번호:<input type="password" name="userPwd"><br/>
+						이름:<input type="text" name="userName"><br/>
+						전화번호:
+						<select name="userPhone1">
+							<option>010</option>
+							<option>011</option>
+						</select>
+		 				<input type="text" name="userPhone2" size="5">
+		 				<input type="text" name="userPhone3" size="5"><br/>
+		 				
+						이메일 : <input type="text" name="userEmail">
+						<button>이메일 인증</button> <br>
+		
+						닉네임 : <input type="text" name="userNick"><button>중복 검사</button><br><br>
+						
+						프로필 사진 선택 <input type="file" name="userPhoto"><br>
+						
+						<div id="userImg" align="center">
+							<div class="image-box">
+								<img class="image-thumbnail" src="resources/img/cat.jpg">
+							</div>
+						<br>
+						<input type="button" value="프로필 사진 등록" onclick="">
 						</div>
-
-					</div>
-					<!-- END OVERVIEW -->					
+						<br>
+		
+						<input type="button" value="가입" onclick="send(this.form);">		
+						<input type="button" value="취소" onclick="location.href='/sample'">		
+					</form>
 				</div>
+		<!-- 네이버 연동 회원가입 구현 -->
 			</div>
 			<!-- END MAIN CONTENT -->
 		</div>
@@ -113,8 +140,21 @@
 	<script src="resources/assets/vendor/chartist/js/chartist.min.js"></script>
 	<script src="resources/assets/scripts/klorofil-common.js"></script>
 	<script>
-	
 	</script>
+	<style>
+		.image-box{
+			border:3px solid;
+			width: 300px;
+			height: 300px;
+			overflow:hidden;
+			margin:0 auto;
+		}
+		.img-thumbnail{
+			width:100%;
+			height:100%;
+			object-fit:cover;
+		}
+	</style>
 </body>
 
 </html>
