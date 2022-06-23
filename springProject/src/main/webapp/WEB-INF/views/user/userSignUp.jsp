@@ -86,26 +86,30 @@
 				<div align="center">
 					<h1>회원가입</h1>
 					<form action="join_ok.jsp" method="post">
-					<div id="text-box">
-						아이디:<input type="text" name="userId">
-						<button>중복 검사</button>
-						<br/>
-						비밀번호:<input type="password" name="userPwd"><br/>
-						이름:<input type="text" name="userName"><br/>
-						전화번호:
+					<div id="text-box" style="width:fit-content" align="left">
+						<div class="login-text">아이디<input type="text" name="userId">
+							<button>중복 검사</button></div>
+						<br>
+						
+						<div class="login-text">비밀번호<input type="password" name="userPwd"></div><br>
+						
+						<div class="login-text">이름<input type="text" name="userName"></div><br>
+						
+						<div class="login-text">전화번호
 						<select name="userPhone1">
 							<option>010</option>
 							<option>011</option>
 						</select>
-		 				<input type="text" name="userPhone2" size="5">
-		 				<input type="text" name="userPhone3" size="5"><br/>
+		 				<input type="text" name="userPhone2" size="4">
+		 				<input type="text" name="userPhone3" size="4"></div><br>
 		 				
-						이메일 : <input type="text" name="userEmail">
-						<button>이메일 인증</button> <br>
+						<div class="login-text">이메일  <input type="text" name="userEmail">
+						<button>이메일 인증</button></div><br>
 		
-						닉네임 : <input type="text" name="userNick"><button>중복 검사</button><br><br>
+						<div class="login-text">닉네임  <input type="text" name="userNick"> <button>중복 검사</button></div>
+						<br>
 					</div>
-						프로필 사진 선택 <input type="file" name="userPhoto"><br>
+						::: 프로필 사진 선택 ::: <input type="file" name="userPhoto">
 						
 						<div id="userImg" align="center">
 							<div class="image-box">
@@ -143,13 +147,17 @@
 	<script>
 	</script>
 	<style>
-
+	
+		#login-text{
+			margin:5px auto;
+		}
+	
 		.image-box{
 			border:3px solid;
 			width: 300px;
 			height: 300px;
 			overflow:hidden;
-			margin:0 auto;
+			margin:10px auto;
 		}
 		.img-thumbnail{
 			width:100%;
