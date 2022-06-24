@@ -68,11 +68,11 @@
 								</ul>
 							</div>
 						</li>
-						<li><a href="userLogin" class=""><i class="lnr lnr-code"></i> <span>로그인</span></a></li>
+						<li><a href="parking" onclick="alert('로그아웃 되었습니다.')" class=""><i class="lnr lnr-code"></i> <span>로그아웃</span></a></li>
 						<li><a href="userUpdate" class=""><i class="lnr lnr-cog"></i> <span>회원정보 변경</span></a></li>
-						<li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>임시자리</span></a></li>
-						<li><a href='userSignUp' class=""><i class="lnr lnr-dice"></i> <span>회원가입</span></a></li>
 						<li><a href="userDelete" class=""><i class="lnr lnr-text-format"></i> <span>회원 탈퇴</span></a></li>
+						<li><a href="parking" class=""><i class="lnr lnr-linearicons"></i> <span>임시자리</span></a></li>
+						<li><a href='parking' class=""><i class="lnr lnr-dice"></i> <span>임시자리</span></a></li>
 					</ul>
 				</nav>
 			</div>
@@ -86,10 +86,10 @@
 				<div align="center">
 					<h1>회원 탈퇴</h1>
 					<form action="join_ok.jsp" method="post">
+					<input type="hidden" name="userId" value="user01">
 						<p>비밀번호를 입력해주세요</p>
-						<input type="password" value="userPwd"><br><br>
-						<button>탈퇴하기</button>
-						
+						<input type="password" name="pwd" value="userPwd"><br><br>
+						<input type="button" value="탈퇴하기" onclick="userDel(this.form)">						
 					</form>
 				</div>
 				
@@ -113,21 +113,16 @@
 	<script src="resources/assets/vendor/chartist/js/chartist.min.js"></script>
 	<script src="resources/assets/scripts/klorofil-common.js"></script>
 	<script>
+		function userDel(f){
+			// 정말로 탈퇴하시겠습니까? 에서 확인을 누른다면 탈퇴
+			//비밀번호가 user 비밀번호가 일치하다면 유저 지우기
+			// 보내는 값: primary 키인 아이디.
+			
+		}
+	
+	
 	</script>
-	<style>
-		.image-box{
-			border:3px solid;
-			width: 300px;
-			height: 300px;
-			overflow:hidden;
-			margin:0 auto;
-		}
-		.img-thumbnail{
-			width:100%;
-			height:100%;
-			object-fit:cover;
-		}
-	</style>
+
 </body>
 
 </html>

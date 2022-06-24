@@ -28,12 +28,7 @@ public class UserController {
 	public String okLogin() {
 		return VIEW_PATH+"loginHome.jsp";
 	}
-	
-	
-	@RequestMapping("/userLogout")
-	public String logoutUser() {
-		return VIEW_PATH+"user/userLogout.jsp";
-	}
+
 	
 	@RequestMapping("/userUpdate")
 	public String updateUser() {

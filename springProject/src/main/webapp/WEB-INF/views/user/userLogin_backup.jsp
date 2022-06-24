@@ -20,9 +20,6 @@
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="resources/assets/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="resources/assets/img/favicon.png">
-	
-
-	
 </head>
 
 <body>
@@ -47,6 +44,7 @@
 				<div class="navbar-btn navbar-btn-right">
 					<p>임시구역</p>
 				</div>
+
 			</div>
 		</nav>
 		<!-- END NAVBAR -->
@@ -71,10 +69,10 @@
 								</ul>
 							</div>
 						</li>
-						<li><a href="parking" onclick="alert('로그아웃 되었습니다.')" class=""><i class="lnr lnr-code"></i> <span>로그아웃</span></a></li>
-						<li><a href="userUpdate" class=""><i class="lnr lnr-cog"></i> <span>회원정보 변경</span></a></li>
-						<li><a href='userDelete' class=""><i class="lnr lnr-dice"></i> <span>회원 탈퇴</span></a></li>
-						<li><a href="typography.html" class=""><i class="lnr lnr-text-format"></i> <span>임시자리</span></a></li>
+						<li><a href='userSignUp' class=""><i class="lnr lnr-dice"></i> <span>회원가입</span></a></li>
+						<li><a href="userLogin" class=""><i class="lnr lnr-code"></i> <span>로그인</span></a></li>
+						<li><a href="parking" class=""><i class="lnr lnr-cog"></i> <span>회원정보 변경</span></a></li>
+						<li><a href="parking" class=""><i class="lnr lnr-text-format"></i> <span>회원 탈퇴</span></a></li>
 						<li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>임시자리</span></a></li>
 					</ul>
 				</nav>
@@ -85,46 +83,24 @@
 		<div class="main">
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
-				<div align="center">
-					<h1>회원 정보 수정</h1>
-					<form action="join_ok.jsp" method="post">
-						<div class="text-box" style="width:fit-content;"  align="left">
-							<div class="update-text" style="margin:10px auto">아이디 <br>
-							<input type="text" name="userId" value="user01" readonly  size="25" style="background-color : #e2e2e2;"></div>
-							<div class="update-text" style="margin:10px auto">비밀번호<br>
-								<div class="pwd"><input type="password" name="userPwd" placeholder="원래 비밀번호" size="25"></div> <br>
-								<div class="pwd"><input type="password" name="newPwd" placeholder="새 비밀번호" size="25"> </div>	
-							</div>						
-							<div class="update-text" style="margin:10px auto">이름<br>
-							<input type="text" name="userName" value="홍길동" readonly size="25" style="background-color : #e2e2e2;"></div>
-							<div class="update-text" style="margin:10px auto">전화번호 <br>
-		 					<input type="text" name="userPhone1" size="4" placeholder="010">
-		 					<input type="text" name="userPhone2" size="4" placeholder="1234">
-		 					<input type="text" name="userPhone3" size="4" placeholder="1234"></div>
-		 				
-							<div class="update-text" style="margin:10px auto">이메일<br>
-							<input type="text" name="userEmail" size="25">
-							<button>이메일 인증</button></div>
-		
-							<div class="update-text" style="margin:10px auto">닉네임<br>
-							<input type="text" name="userNick" size="25"> <button>중복 검사</button>
-							</div>
-						</div>
-
-						프로필 사진 수정<input type="file" name="userPhoto">
 						
-						<div id="userImg" align="center">
-							<div class="image-box">
-								<img class="image-thumbnail" src="resources/img/cat.jpg">
-							</div>						
-						<input type="button" value="프로필 사진 등록" onclick="">
-						</div>
-						<br>		
-						<input type="button" value="수정 완료" onclick="send(this.form);">		
-						<input type="button" value="취소" onclick="location.href='/sample'">		
+				<div align="center">
+					<h3>로그인 페이지</h3>
+				<div id="text-box" style="width:fit-content" align="left">
+					<form action="loginOk" method="post">
+						아이디<br>
+						<input type="text" name="id"><br>
+						비밀번호<br>
+						<input type="password" name="pw"><br>
+						<input type="checkbox" value="autologin">자동으로 로그인하기
+						<input type="submit" value="로그인">
 					</form>
 				</div>
-			</div>
+				<input type="button" name="naverLogin" value="네이버 아이디로 로그인" onclick="location.href='naverLogin'">
+				<input type="button" name="findIdPwd" value="아이디/비밀번호 찾기" onclick="">
+	
+	<!-- 네이버 연동 로그인 구현 -->
+				</div>
 		<!-- 네이버 연동 회원가입 구현 -->
 			</div>
 			<!-- END MAIN CONTENT -->
@@ -136,26 +112,8 @@
 				<p class="copyright">Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a></p>
 			</div>
 		</footer>
-		
-
+	</div>
 	<!-- END WRAPPER -->
-<style>			
-		
-		.image-box{
-			border:3px solid;
-			width: 300px;
-			height: 300px;
-			overflow:hidden;
-			margin:10 auto;
-		}
-		.img-thumbnail{
-			width:100%;
-			height:100%;
-			object-fit:cover;
-		}
-</style>
-	
-	
 	<!-- Javascript -->
 	<script src="resources/assets/vendor/jquery/jquery.min.js"></script>
 	<script src="resources/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -164,11 +122,21 @@
 	<script src="resources/assets/vendor/chartist/js/chartist.min.js"></script>
 	<script src="resources/assets/scripts/klorofil-common.js"></script>
 	<script>
-	//유효성 검사
-	
-	</script>	
-	
-
+	</script>
+	<style>
+		.image-box{
+			border:3px solid;
+			width: 300px;
+			height: 300px;
+			overflow:hidden;
+			margin:0 auto;
+		}
+		.img-thumbnail{
+			width:100%;
+			height:100%;
+			object-fit:cover;
+		}
+	</style>
 </body>
 
 </html>
