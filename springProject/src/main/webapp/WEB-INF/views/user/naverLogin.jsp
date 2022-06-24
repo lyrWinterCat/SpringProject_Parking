@@ -6,10 +6,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>	
-	성공적으로 로그아웃되었습니다.<br>
-	
-	
+<body>
+
+	네이버 아이디로 시작하기 들어옴
 
 </body>
 </html>

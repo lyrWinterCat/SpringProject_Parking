@@ -69,10 +69,10 @@
 							</div>
 						</li>
 						<li><a href="userLogin" class=""><i class="lnr lnr-code"></i> <span>로그인</span></a></li>
-						<li><a href="userUpdate" class=""><i class="lnr lnr-cog"></i> <span>회원정보 변경</span></a></li>
+						<li><a href="parking" class=""><i class="lnr lnr-cog"></i> <span>회원정보 변경</span></a></li>
 						<li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>임시자리</span></a></li>
 						<li><a href='userSignUp' class=""><i class="lnr lnr-dice"></i> <span>회원가입</span></a></li>
-						<li><a href="userDelete" class=""><i class="lnr lnr-text-format"></i> <span>회원 탈퇴</span></a></li>
+						<li><a href="parking" class=""><i class="lnr lnr-text-format"></i> <span>회원 탈퇴</span></a></li>
 					</ul>
 				</nav>
 			</div>

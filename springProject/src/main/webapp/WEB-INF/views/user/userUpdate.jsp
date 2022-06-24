@@ -20,6 +20,9 @@
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="resources/assets/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="resources/assets/img/favicon.png">
+	
+
+	
 </head>
 
 <body>
@@ -82,13 +85,46 @@
 		<div class="main">
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
-						
 				<div align="center">
-					<h1>회원정보 수정</h1>
+					<h1>회원 정보 수정</h1>
 					<form action="join_ok.jsp" method="post">
-						<p>회원정보 수정구간</p>		
+						<div class="text-box" style="width:fit-content;"  align="left">
+							<div class="update-text" style="margin:10px auto">아이디 <br>
+							<input type="text" name="userId" value="user01" readonly  size="25" style="background-color : #e2e2e2;"></div>
+							<div class="update-text" style="margin:10px auto">비밀번호<br>
+								<div class="pwd"><input type="password" name="userPwd" placeholder="원래 비밀번호" size="25"></div> <br>
+								<div class="pwd"><input type="password" name="newPwd" placeholder="새 비밀번호" size="25"> </div>	
+							</div>						
+							<div class="update-text" style="margin:10px auto">이름<br>
+							<input type="text" name="userName" value="홍길동" readonly size="25" style="background-color : #e2e2e2;"></div>
+							<div class="update-text" style="margin:10px auto">전화번호 <br>
+		 					<input type="text" name="userPhone1" size="4" placeholder="010">
+		 					<input type="text" name="userPhone2" size="4" placeholder="1234">
+		 					<input type="text" name="userPhone3" size="4" placeholder="1234"></div>
+		 				
+							<div class="update-text" style="margin:10px auto">이메일<br>
+							<input type="text" name="userEmail" size="25">
+							<button>이메일 인증</button></div>
+		
+							<div class="update-text" style="margin:10px auto">닉네임<br>
+							<input type="text" name="userNick" size="25"> <button>중복 검사</button>
+							</div>
+						</div>
+
+						프로필 사진 수정<input type="file" name="userPhoto">
+						
+						<div id="userImg" align="center">
+							<div class="image-box">
+								<img class="image-thumbnail" src="resources/img/cat.jpg">
+							</div>						
+						<input type="button" value="프로필 사진 등록" onclick="">
+						</div>
+						<br>		
+						<input type="button" value="수정 완료" onclick="send(this.form);">		
+						<input type="button" value="취소" onclick="location.href='/sample'">		
 					</form>
 				</div>
+			</div>
 		<!-- 네이버 연동 회원가입 구현 -->
 			</div>
 			<!-- END MAIN CONTENT -->
@@ -100,8 +136,26 @@
 				<p class="copyright">Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a></p>
 			</div>
 		</footer>
-	</div>
+		
+
 	<!-- END WRAPPER -->
+<style>			
+		
+		.image-box{
+			border:3px solid;
+			width: 300px;
+			height: 300px;
+			overflow:hidden;
+			margin:10 auto;
+		}
+		.img-thumbnail{
+			width:100%;
+			height:100%;
+			object-fit:cover;
+		}
+</style>
+	
+	
 	<!-- Javascript -->
 	<script src="resources/assets/vendor/jquery/jquery.min.js"></script>
 	<script src="resources/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -110,21 +164,11 @@
 	<script src="resources/assets/vendor/chartist/js/chartist.min.js"></script>
 	<script src="resources/assets/scripts/klorofil-common.js"></script>
 	<script>
-	</script>
-	<style>
-		.image-box{
-			border:3px solid;
-			width: 300px;
-			height: 300px;
-			overflow:hidden;
-			margin:0 auto;
-		}
-		.img-thumbnail{
-			width:100%;
-			height:100%;
-			object-fit:cover;
-		}
-	</style>
+	//유효성 검사
+	
+	</script>	
+	
+
 </body>
 
 </html>
