@@ -1,6 +1,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" pageEncoding="utf-8"%>
-<html>
+<%@ page session="true"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page import="java.net.URLEncoder" %>
+<%@ page import="java.security.SecureRandom" %>
+<%@ page import="java.math.BigInteger" %>
+<!doctype html>
+<html lang="ko">
 <head>
 	<title> 주차장 찾기 템플릿</title>
 	<meta charset="utf-8">
@@ -20,7 +25,11 @@
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="resources/assets/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="resources/assets/img/favicon.png">
-</head>
+	
+	<script type="text/javascript"	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"	charset="utf-8"></script>
+		<script type="text/javascript"	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	</head>
 
 <body>
 	<!-- WRAPPER -->
@@ -69,11 +78,11 @@
 								</ul>
 							</div>
 						</li>
-						<li><a href="userLogin" class=""><i class="lnr lnr-code"></i> <span>로그인</span></a></li>
-						<li><a href="userUpdate" class=""><i class="lnr lnr-cog"></i> <span>회원정보 변경</span></a></li>
-						<li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>임시자리</span></a></li>
 						<li><a href='userSignUp' class=""><i class="lnr lnr-dice"></i> <span>회원가입</span></a></li>
-						<li><a href="userDelete" class=""><i class="lnr lnr-text-format"></i> <span>회원 탈퇴</span></a></li>
+						<li><a href="userLogin" class=""><i class="lnr lnr-code"></i> <span>로그인</span></a></li>
+						<li><a href="parking" class=""><i class="lnr lnr-cog"></i> <span>회원정보 변경</span></a></li>
+						<li><a href="parking" class=""><i class="lnr lnr-text-format"></i> <span>회원 탈퇴</span></a></li>
+						<li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>임시자리</span></a></li>
 					</ul>
 				</nav>
 			</div>
@@ -84,24 +93,35 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 						
-				<div align="center">
+			<div align="center">
+				<div id="text-box" style="width:300px; height:auto;" align="left">
 					<h3>로그인 페이지</h3>
-				<div id="text-box" style="width:fit-content" align="left">
 					<form action="loginOk" method="post">
 						아이디<br>
-						<input type="text" name="id"><br>
+						<input type="text" name="id" size="20"><br><br>
 						비밀번호<br>
-						<input type="password" name="pw"><br>
+						<input type="password" name="pw" size="20"><br><br>
 						<input type="checkbox" value="autologin">자동으로 로그인하기
 						<input type="submit" value="로그인">
 					</form>
-				</div>
-				<input type="button" name="naverLogin" value="네이버 아이디로 로그인" onclick="location.href='naverLogin'">
+					<br>
 				<input type="button" name="findIdPwd" value="아이디/비밀번호 찾기" onclick="">
-	
-	<!-- 네이버 연동 로그인 구현 -->
+				<br><br>
+			<%
+		    String clientId = "TXQEEu2dkgi7CDCThSKM";//애플리케이션 클라이언트 아이디값";
+		    String redirectURI = URLEncoder.encode("http://127.0.0.1:9090/parking", "UTF-8");
+		    SecureRandom random = new SecureRandom();
+		    String state = new BigInteger(130, random).toString();
+		    String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code";
+		    apiURL += "&client_id=" + clientId;
+		    apiURL += "&redirect_uri=" + redirectURI;
+		    apiURL += "&state=" + state;
+		    session.setAttribute("state", state);
+			 %>
+				<a href="<%=apiURL%>"><img height="50" src="http://static.nid.naver.com/oauth/small_g_in.PNG"/></a>
 				</div>
-		<!-- 네이버 연동 회원가입 구현 -->
+			</div>
+	
 			</div>
 			<!-- END MAIN CONTENT -->
 		</div>
@@ -123,20 +143,7 @@
 	<script src="resources/assets/scripts/klorofil-common.js"></script>
 	<script>
 	</script>
-	<style>
-		.image-box{
-			border:3px solid;
-			width: 300px;
-			height: 300px;
-			overflow:hidden;
-			margin:0 auto;
-		}
-		.img-thumbnail{
-			width:100%;
-			height:100%;
-			object-fit:cover;
-		}
-	</style>
+
 </body>
 
 </html>
