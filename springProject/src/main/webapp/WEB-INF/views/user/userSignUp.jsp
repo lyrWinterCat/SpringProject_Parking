@@ -85,37 +85,39 @@
 						
 				<div align="center">
 					<h1>회원가입</h1>
+					<input type="button" value="네이버 아이디로 시작하기" onclick="location.href='naverSignUp'">
 					<form action="join_ok.jsp" method="post">
 					<div id="text-box" style="width:fit-content" align="left">
-						<div class="login-text">아이디<input type="text" name="userId">
+						<div class="login-text" style="margin:10px auto">아이디 <br>
+						<input type="text" name="userId" size="25">
 							<button>중복 검사</button></div>
-						<br>
 						
-						<div class="login-text">비밀번호<input type="password" name="userPwd"></div><br>
 						
-						<div class="login-text">이름<input type="text" name="userName"></div><br>
+						<div class="login-text" style="margin:10px auto">비밀번호<br>
+						<input type="password" name="userPwd" size="25"></div>
 						
-						<div class="login-text">전화번호
-						<select name="userPhone1">
-							<option>010</option>
-							<option>011</option>
-						</select>
+						<div class="login-text" style="margin:10px auto">이름<br>
+						<input type="text" name="userName" size="25"></div>
+						
+						<div class="login-text" style="margin:10px auto">전화번호 <br>
+		 				<input type="text" name="userPhone1" size="4">
 		 				<input type="text" name="userPhone2" size="4">
-		 				<input type="text" name="userPhone3" size="4"></div><br>
+		 				<input type="text" name="userPhone3" size="4"></div>
 		 				
-						<div class="login-text">이메일  <input type="text" name="userEmail">
-						<button>이메일 인증</button></div><br>
+						<div class="login-text" style="margin:10px auto">이메일<br>
+						<input type="text" name="userEmail" size="25">
+						<button>이메일 인증</button></div>
 		
-						<div class="login-text">닉네임  <input type="text" name="userNick"> <button>중복 검사</button></div>
-						<br>
+						<div class="login-text" style="margin:10px auto">닉네임<br>
+						<input type="text" name="userNick" size="25"> <button>중복 검사</button></div>
+
 					</div>
 						::: 프로필 사진 선택 ::: <input type="file" name="userPhoto">
 						
 						<div id="userImg" align="center">
 							<div class="image-box">
 								<img class="image-thumbnail" src="resources/img/cat.jpg">
-							</div>
-						<br>
+							</div>						
 						<input type="button" value="프로필 사진 등록" onclick="">
 						</div>
 						<br>
@@ -145,7 +147,10 @@
 	<script src="resources/assets/vendor/chartist/js/chartist.min.js"></script>
 	<script src="resources/assets/scripts/klorofil-common.js"></script>
 	<script>
+		// 유효성 검사	
+	
 	</script>
+
 	<style>
 	
 		#login-text{
