@@ -23,7 +23,7 @@
 	
 	<!-- 컨트롤러 자동생성 -->
 	<context:component-scan base-package="com.project.exception" />
-	<context:component-scan base-package="com.project.sample" />
+	<context:component-scan base-package="com.project.controller" />
 	<context:component-scan base-package="com.project.controller.user" />
 	
 	<!-- 수동생성 -->
