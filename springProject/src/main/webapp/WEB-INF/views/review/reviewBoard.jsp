@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="resources/assets/vendor/linearicons/style.css">
 	<link rel="stylesheet" href="resources/assets/vendor/chartist/css/chartist-custom.css">
 	<!-- MAIN CSS -->
+	<link rel="stylesheet" href="resources/assets/css/reviewBoard.css">
+	<!-- reviewBoard CSS -->
 	<link rel="stylesheet" href="resources/assets/css/main.css">
 	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
 	<link rel="stylesheet" href="resources/assets/css/demo.css">
@@ -79,22 +81,26 @@
 		</div>
 		<!-- END LEFT SIDEBAR -->
 		<!-- MAIN -->
-		<div class="main">
-			<!-- MAIN CONTENT -->
-			<div class="main-content">
-				<div class="container-fluid">
-					<!-- OVERVIEW -->
-					<div class="panel panel-headline">
-						<div class="panel-heading">
-							<h3 class="panel-title">주차장 / 커뮤니티 임시공간</h3>
-							<p class="panel-subtitle">Period: 2022.06.22</p>
-						</div>
-
-					</div>
-					<!-- END OVERVIEW -->					
-				</div>
-			</div>
-			<!-- END MAIN CONTENT -->
+				<div class="main">
+			<h1>후기 게시판</h1>
+			<table>
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>작성일</th>
+					<th>별점</th>
+					<th>조회수</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td><a href="#">첫번째글의 제목입니다.</a></td>
+					<td>gPwjddl98</td>
+					<td>2022-06-24</td>
+					<td>별점표시영역</td>
+					<td>0</td>
+				</tr>
+			</table>
 		</div>
 		<!-- END MAIN -->		
 		

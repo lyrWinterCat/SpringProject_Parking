@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+*{margin:0; padding:0;}
+
+h1{
+	margin: 50px;
+	color : #252c35;
+}
+table{
+	margin: 50px;
+	width: 1560px;
+	
+}
+th{
+	text-align: center;
+	background-color: #00AAFF;
+	color:#fff;
+	border: 1px solid #fff;
+	height: 50px;
+	box-sizing: border-box;
+
+}
+td{
+	background-color :#dbdbdb;
+	text-align: center;
+	height: 50px;
+	border: 1px solid #fff;
+	color: #000;
+}
+td:nth-child(2) {
+	width: 55%;
+}
+td a{
+	color: #000;
+}
+td a:hover{
+	text-decoration: underline;
+}

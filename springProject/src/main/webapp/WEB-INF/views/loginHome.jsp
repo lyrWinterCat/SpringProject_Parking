@@ -79,7 +79,7 @@
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>커뮤니티</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
-									<li><a href="page-profile.html" class="">후기 게시판</a></li>
+									<li><a href="reviewB" class="">후기 게시판</a></li>
 									<li><a href="page-login.html" class="">자유 게시판</a></li>
 									<li><a href="page-lockscreen.html" class="">맛집 추천</a></li>
 								</ul>
