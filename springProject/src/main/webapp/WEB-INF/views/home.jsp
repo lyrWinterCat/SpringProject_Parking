@@ -2,7 +2,7 @@
 <%@ page session="false" pageEncoding="utf-8"%>
 <html>
 <head>
-	<title> 주차장 찾기 템플릿</title>
+	<title> 부엉이 주차장 </title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -20,6 +20,7 @@
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="resources/assets/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="resources/assets/img/favicon.png">
+	<script src="https://kit.fontawesome.com/d9e2783f4c.js" crossorigin="d9e2783f4c"></script>
 </head>
 
 <body>
@@ -57,9 +58,9 @@
 						</div>
 						<li><a href="parking" class="active"><i class="lnr lnr-home"></i> <span>메인화면</span></a></li>
 						<li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i> <span>공지사항</span></a></li>
-						<li><a href="charts.html" class=""><i class="lnr lnr-chart-bars"></i> <span>즐겨찾는 주차장</span></a></li>
+						<li><a href="charts.html" class=""><i class="fa-solid fa-square-parking"></i> <span>즐겨찾는 주차장</span></a></li>
 						<li>
-							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>커뮤니티</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="fa-solid fa-chalkboard-user"></i> <span>커뮤니티</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
 									<li><a href="page-profile.html" class="">후기 게시판</a></li>
@@ -68,11 +69,11 @@
 								</ul>
 							</div>
 						</li>
-						<li><a href="userLogin" class=""><i class="lnr lnr-code"></i> <span>로그인</span></a></li>
-						<li><a href="userUpdate" class=""><i class="lnr lnr-cog"></i> <span>회원정보 변경</span></a></li>
-						<li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>임시자리</span></a></li>
-						<li><a href='userSignUp' class=""><i class="lnr lnr-dice"></i> <span>회원가입</span></a></li>
-						<li><a href="userDelete" class=""><i class="lnr lnr-text-format"></i> <span>회원 탈퇴</span></a></li>
+						<li><a href="userLogin" class=""> <i class="fa-brands fa-earlybirds"></i> <span>로그인</span></a></li>
+						<li><a href="userUpdate" class=""><i class="fa-brands fa-earlybirds"></i> <span>회원정보 변경</span></a></li>
+						<li><a href="icons.html" class=""><i class="fa-brands fa-earlybirds"></i> <span>임시자리</span></a></li>
+						<li><a href='userSignUp' class=""><i class="fa-brands fa-earlybirds"></i> <span>회원가입</span></a></li>
+						<li><a href="userDelete" class=""><i class="fa-brands fa-earlybirds"></i> <span>회원 탈퇴</span></a></li>
 					</ul>
 				</nav>
 			</div>
@@ -106,6 +107,7 @@
 	</div>
 	<!-- END WRAPPER -->
 	<!-- Javascript -->
+
 	<script src="resources/assets/vendor/jquery/jquery.min.js"></script>
 	<script src="resources/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="resources/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>

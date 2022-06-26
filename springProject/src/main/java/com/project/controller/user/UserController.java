@@ -1,10 +1,22 @@
 package com.project.controller.user;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.project.service.UserService;
+
 @Controller
 public class UserController {
+	
+	@Autowired
+	UserService userService;
+	
+	@RequestMapping("/userTest")
+	public void test() {
+		userService.getList();
+	}
+	
 	
 	public static final String VIEW_PATH = "/WEB-INF/views/";
 	
@@ -18,6 +30,15 @@ public class UserController {
 	public String goUserSign() {
 		return VIEW_PATH+"user/userSignUp.jsp";
 	}
+	
+	@RequestMapping("/userSignOk")
+	public String signUp() {
+		
+		
+		return VIEW_PATH+"main.jsp";
+	}
+	
+	
 	
 	@RequestMapping("/userLogin")
 	public String loginUser() {
@@ -38,6 +59,9 @@ public class UserController {
 	public String deleteUser() {
 		return VIEW_PATH+"user/userDelete.jsp";
 	}
+	
+	
+
 	
 
 }
