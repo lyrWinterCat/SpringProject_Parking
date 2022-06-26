@@ -38,9 +38,11 @@
 <!-- 제이쿼리 cdn -->
 <script src="https://code.jquery.com/jquery-3.6.0.js"
 	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+
 	crossorigin="anonymous">	
 </script>
 <script src="https://kit.fontawesome.com/d9e2783f4c.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -51,6 +53,7 @@
 			<div class="brand" style="padding: 15px 40px;">
 				<a href="index.html"><img
 					src="resources/assets/img/parkingIcon.png" alt="Klorofil Logo"
+
 					class="img-responsive logo"></a>
 
 			</div>
@@ -63,7 +66,9 @@
 				<form class="navbar-form navbar-left">
 					<div class="input-group">
 						<input type="text" value="" class="form-control"
+
 							placeholder="검색할 내용을 입력해주세요" style="width: 400px;"> <span
+
 							class="input-group-btn"><button type="button"
 								class="btn btn-primary">Go</button></span>
 					</div>
@@ -77,6 +82,7 @@
 		<!-- LEFT SIDEBAR -->
 		<div id="sidebar-nav" class="sidebar">
 			<div class="sidebar-scroll">
+
 				<ul class="nav">
 						<div style="text-align:center; font-size:30px;">
 							<li><img src="resources/assets/img/user.png" class="img-circle" alt="Avatar" style="width : 90%; margin-top : 30px;"> <span>Admin</span></li>
@@ -86,12 +92,14 @@
 						<li><a href="charts.html" class=""><i class="fa-solid fa-square-parking"></i> <span>즐겨찾는 주차장</span></a></li>
 						<li>
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="fa-solid fa-chalkboard-user"></i> <span>커뮤니티</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+				
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
 									<li><a href="page-profile.html" class="">후기 게시판</a></li>
 									<li><a href="page-login.html" class="">자유 게시판</a></li>
 									<li><a href="page-lockscreen.html" class="">맛집 추천</a></li>
 								</ul>
+
 							</div>
 						</li>
 						<li><a href='userSignUp' class=""><i class="fa-solid fa-car-on"></i> <span>회원가입</span></a></li>
@@ -99,6 +107,7 @@
 						<li><a href="userUpdate" class=""><i class="fa-solid fa-car-rear"></i> <span>회원정보 변경</span></a></li>
 						<li><a href="userDelete" class=""><i class="fa-solid fa-car-burst"></i> <span>회원 탈퇴</span></a></li>
 						<li><a href="icons.html" class=""><i class="fa-solid fa-car-side"></i> <span>임시자리</span></a></li>
+
 					</ul>
 				</nav>
 			</div>
