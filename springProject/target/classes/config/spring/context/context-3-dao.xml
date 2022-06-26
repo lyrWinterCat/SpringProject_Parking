@@ -9,16 +9,20 @@
 	
 	<!-- <context:component-scan base-package="com.korea.mybatis"/> -->
 	
-	<mybatis-spring:scan base-package="dao"/>
+	<!-- 서비스 객체 자동생성 -->
+	<context:component-scan base-package="com.project.service"/>
+	
+	<!-- mybatis - mapper 어노테이션 인식 -->
+	<mybatis-spring:scan base-package="com.project.mapper"/>
 	
 	
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<!-- <bean id="dept_dao" class="dao.DeptDAO">
+	<!--
+	수동 생성 방법 >> 사용하지 않음
+	이유 : sqlSessionBean을 만들지 않음 ! >> context-2-mybatis.xml 세션부분 주석처리 
+	 <bean id="dept_dao" class="dao.DeptDAO">
 		<property name="sqlSession" ref="sqlSessionBean"/>
 	</bean>
-	
-	<bean id="sawon_dao" class="dao.SawonDAO">
-		<property name="sqlSession" ref="sqlSessionBean"></property>
-	</bean> -->
+ -->
 </beans>

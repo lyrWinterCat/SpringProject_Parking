@@ -2,7 +2,7 @@
 <%@ page session="false" pageEncoding="utf-8"%>
 <html>
 <head>
-	<title> 주차장 찾기 템플릿</title>
+	<title> 부엉이 주차장 </title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -20,29 +20,36 @@
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="resources/assets/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="resources/assets/img/favicon.png">
+	<script src="https://kit.fontawesome.com/d9e2783f4c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 	<!-- WRAPPER -->
-	<div id="wrapper"> 
+	<div id="wrapper">
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="brand">
-				<a href="index.html"><img src="resources/assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
-				
+			<div class="brand" style="padding: 15px 40px;">
+				<a href="index.html"><img
+					src="resources/assets/img/parkingIcon.png" alt="Klorofil Logo"
+					class="img-responsive logo"></a>
+
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
-					<button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+					<button type="button" class="btn-toggle-fullwidth">
+						<i class="lnr lnr-arrow-left-circle"></i>
+					</button>
 				</div>
 				<form class="navbar-form navbar-left">
 					<div class="input-group">
-						<input type="text" value="" class="form-control" placeholder="검색할 내용을 입력해주세요" style="width:300px;">
-						<span class="input-group-btn"><button type="button" class="btn btn-primary">Go</button></span>
+						<input type="text" value="" class="form-control"
+							placeholder="검색할 내용을 입력해주세요" style="width: 400px;"> <span
+							class="input-group-btn"><button type="button"
+								class="btn btn-primary">Go</button></span>
 					</div>
 				</form>
 				<div class="navbar-btn navbar-btn-right">
-					<p>임시구역</p>
+					<img src="resources/assets/img/parkingMap.png" alt="map Logo">
 				</div>
 			</div>
 		</nav>
@@ -50,16 +57,15 @@
 		<!-- LEFT SIDEBAR -->
 		<div id="sidebar-nav" class="sidebar">
 			<div class="sidebar-scroll">
-				<nav>
-					<ul class="nav">
+				<ul class="nav">
 						<div style="text-align:center; font-size:30px;">
-						<li><img src="resources/assets/img/user.png" class="img-circle" alt="Avatar" style="width : 90%; margin-top : 10px;"> <span>Admin</span></li>
+							<li><img src="resources/assets/img/user.png" class="img-circle" alt="Avatar" style="width : 90%; margin-top : 30px;"> <span>Admin</span></li>
 						</div>
-						<li><a href="index.html" class="active"><i class="lnr lnr-home"></i> <span>메인화면</span></a></li>
+						<li><a href="parking" class="active"><i class="lnr lnr-home"></i> <span>메인화면</span></a></li>
 						<li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i> <span>공지사항</span></a></li>
-						<li><a href="charts.html" class=""><i class="lnr lnr-chart-bars"></i> <span>즐겨찾는 주차장</span></a></li>
+						<li><a href="charts.html" class=""><i class="fa-solid fa-square-parking"></i> <span>즐겨찾는 주차장</span></a></li>
 						<li>
-							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>커뮤니티</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="fa-solid fa-chalkboard-user"></i> <span>커뮤니티</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
 									<li><a href="page-profile.html" class="">후기 게시판</a></li>
@@ -68,11 +74,11 @@
 								</ul>
 							</div>
 						</li>
-						<li><a href="parking" onclick="alert('로그아웃 되었습니다.')" class=""><i class="lnr lnr-code"></i> <span>로그아웃</span></a></li>
-						<li><a href="userUpdate" class=""><i class="lnr lnr-cog"></i> <span>회원정보 변경</span></a></li>
-						<li><a href='userDelete' class=""><i class="lnr lnr-dice"></i> <span>회원 탈퇴</span></a></li>
-						<li><a href="parking" class=""><i class="lnr lnr-text-format"></i> <span>임시자리</span></a></li>
-						<li><a href="parking" class=""><i class="lnr lnr-linearicons"></i> <span>임시자리</span></a></li>
+						<li><a href="parking" onclick="alert('로그아웃 되었습니다.')" class=""><i class="fa-solid fa-car"></i> <span>로그아웃</span></a></li>
+						<li><a href="userUpdate" class=""><i class="fa-solid fa-car-rear"></i> <span>회원정보 변경</span></a></li>
+						<li><a href="userDelete" class=""><i class="fa-solid fa-car-burst"></i> <span>회원 탈퇴</span></a></li>
+						<li><a href="parking" class=""><i class="fa-solid fa-car-side"></i> <span>임시자리</span></a></li>
+						<li><a href="parking" class=""><i class="fa-solid fa-car-side"></i> <span>임시자리</span></a></li>
 					</ul>
 				</nav>
 			</div>
