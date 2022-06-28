@@ -74,12 +74,17 @@
 								</ul>
 							</div>
 						</li>
-						<li><a href='userSignUp' class=""><i class="fa-solid fa-car-on"></i> <span>회원가입</span></a></li>
-						<li><a href="userLogin" class=""><i class="fa-solid fa-car"></i> <span>로그인</span></a></li>
-						<li><a href="userUpdate" class=""><i class="fa-solid fa-car-rear"></i> <span>회원정보 변경</span></a></li>
-						<li><a href="userDelete" class=""><i class="fa-solid fa-car-burst"></i> <span>회원 탈퇴</span></a></li>
-						<li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>임시자리</span></a></li>
-					</ul>
+						<li><a href='userSignUp' class=""><i
+                     class="fa-solid fa-car-on"></i> <span>회원가입</span></a></li>
+               <li><a href="userLogin" class=""><i
+                     class="fa-solid fa-car"></i> <span>로그인</span></a></li>
+               <li><a href="userLogin" onclick="alert('로그인 후 이용해주세요')" class=""><i
+                     class="fa-solid fa-car-rear"></i> <span>회원정보 변경</span></a></li>
+               <li><a href="userLogin" onclick="alert('로그인 후 이용해주세요')" class=""><i
+                     class="fa-solid fa-car-burst"></i> <span>회원 탈퇴</span></a></li>
+               <li><a href="icons.html" class=""><i
+                     class="fa-solid fa-car-side"></i> <span>임시자리</span></a></li>
+            </ul>
 				</nav>
 			</div>
 		</div>
@@ -95,10 +100,11 @@
 					
 					<form>
 					<div id="text-box" style="width:fit-content" align="left">
-						<div class="login-text" style="margin:10px auto">아이디 <br>
+						<div class="login-text" style="margin:10px auto">아이디 
+						<span id="idCheck_text" style="font-size:0.7em"></span>
+						<br>
 						<input type="text" name="userId" size="25">
-							<button>중복 검사</button></div>
-						
+						</div>						
 						
 						<div class="login-text" style="margin:10px auto">비밀번호<br>
 						<input type="password" name="userPwd" size="25"></div>
@@ -111,12 +117,18 @@
 		 				<input type="text" name="userPhone2" size="4">
 		 				<input type="text" name="userPhone3" size="4"></div>
 		 				
+		 				<div class="login-text" style="margin:10px auto">닉네임
+						<span id="nickCheck_text" style="font-size:0.7em"></span><br>
+						<input type="text" name="userNick" size="25"></div>
+		 				
 						<div class="login-text" style="margin:10px auto">이메일<br>
 						<input type="text" name="userEmail" size="25">
-						<button>이메일 인증</button></div>
-		
-						<div class="login-text" style="margin:10px auto">닉네임<br>
-						<input type="text" name="userNick" size="25"> <button>중복 검사</button></div>
+						<button type="button" id="mail-Check-Btn">이메일 인증</button><br><br>
+						<input type="text" name="checkEmail" placeholder="이메일 인증번호" size="25">
+						<span id="emailCheck_text" style="font-size:0.7em"></span>
+						</div>
+						
+						<br>						
 
 					</div>
 						::: 프로필 사진 선택 ::: <input type="file" name="userPhoto">
@@ -153,13 +165,109 @@
 	<script src="resources/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
 	<script src="resources/assets/vendor/chartist/js/chartist.min.js"></script>
 	<script src="resources/assets/scripts/klorofil-common.js"></script>
+	<script>var contextPath="${pageContext.request.contextPath}"</script>
+	
 	<script>
 		function send(f){
 			// 유효성 검사	
+			
+			
+			
 			f.action="userSignOk";
 			f.method="post";
 			f.submit();
 		}	
+		
+		
+		//아이디 중복검사		
+		let idcheck=false;
+		
+		function checkId(id){
+			idcheck=false;
+			if(id==""){
+				$("#idCheck_text").text("");
+				return;
+			}
+			$.ajax({
+				url:"userCheckId?userId="+id,
+						type:"get",
+						dataType:"json",
+						success:function(result){
+							console.log("들어옴")
+							if(result.status=='ok'){
+								$("#idCheck_text").text("사용 가능");
+								$("#idCheck_text").css("color","blue");
+								idcheck=true;
+							} else{
+								$("#idCheck_text").text("사용 불가");
+								$("#idCheck_text").css("color","red");
+							}
+						},
+						error:function(){
+						console.log("오류");
+				}
+			});
+		}
+		
+		$("input[name='userId']").keyup(function(){
+			checkId($(this).val());
+		})
+		
+		//닉네임 중복검사
+		let nickCheck=false;
+		
+		function checkNick(nick){
+			nickCheck=false;
+			if(nick==""){
+				$("#nickCheck_text").text("");
+				return;
+			}
+			$.ajax({
+				url:"userCheckNick?userNick="+nick,
+						type:"get",
+						dataType:"json",
+						success:function(result){
+							console.log("들어옴")
+							if(result.status=='ok'){
+								$("#nickCheck_text").text("사용 가능");
+								$("#nickCheck_text").css("color","blue");
+								nickCheck=true;
+							} else{
+								$("#nickCheck_text").text("사용 불가");
+								$("#nickCheck_text").css("color","red");
+							}
+						},
+						error:function(){
+						console.log("오류");
+				}
+			});
+		}
+		
+		$("input[name='userNick']").keyup(function(){
+			checkNick($(this).val());
+		})
+		
+		// 이메일 인증
+		$('#mal-Check-Btn').click(function(){
+			const email = $('#userEmail');
+			console.log('이메일 주소 : '+email);
+			const checkInput = $('#emailCheck_text');
+			
+			$.ajax({
+				type:'get',
+				url:"userEmailSend?userEmail="+email,
+				success:function(){
+					
+					
+				}
+			
+			})
+			
+						
+			
+		})
+		
+		
 	</script>
 
 	<style>

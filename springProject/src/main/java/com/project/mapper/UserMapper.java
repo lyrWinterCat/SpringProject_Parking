@@ -10,7 +10,9 @@ import vo.UserVO;
 @Mapper
 public interface UserMapper {
 	public List<UserVO> user_list(String userId);
-	public void insert(UserVO userVO);
-	public Integer login(HashMap<String, String> userMap);
+	public void user_insert(UserVO userVO);
+	public Integer user_login(HashMap<String, String> userMap);
+	public Integer checkId(String userId);
+	public Integer checkNick(String userNick);
 	
 }

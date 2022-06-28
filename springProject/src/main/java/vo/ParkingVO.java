@@ -1,158 +1,177 @@
 package vo;
 
 public class ParkingVO {
-	private int parkingCount, parkingMonthlyPass, parkingBaseCharge, parkingBaseTime, 
-		parkingPlusCharge, parkingPlusTime;
-	
-	private String parkingIdx, parkingName, parkingAddr, parkingTel, 
-		parkingStartTimeWeekday, parkingEndTimeWeekday, parkingStartTimeWeekend,
-		parkingEndTimeWeekend, parkingStartTimeHoliday, parkingEndTimeHoliday, parkingLat, parkingLon;
+   private int parkingCount, parkingBaseCharge, parkingBaseTime, 
+      parkingPlusCharge, parkingPlusTime;
+   
+   private String parkingIdx, parkingName, parkingAddr, parkingTel, 
+      parkingStartTimeWeekday, parkingEndTimeWeekday, parkingStartTimeWeekend, parkingMonthlyPass,
+      parkingEndTimeWeekend, parkingStartTimeHoliday, parkingEndTimeHoliday, parkingLat, parkingLon,
+      parkingSatPay, parkingHolidayPay;
+   
+   
 
-	public int getParkingCount() {
-		return parkingCount;
-	}
+   public String getParkingSatPay() {
+      return parkingSatPay;
+   }
 
-	public void setParkingCount(int parkingCount) {
-		this.parkingCount = parkingCount;
-	}
+   public void setParkingSatPay(String parkingSatPay) {
+      this.parkingSatPay = parkingSatPay;
+   }
 
-	public int getParkingMonthlyPass() {
-		return parkingMonthlyPass;
-	}
+   public String getParkingHolidayPay() {
+      return parkingHolidayPay;
+   }
 
-	public void setParkingMonthlyPass(int parkingMonthlyPass) {
-		this.parkingMonthlyPass = parkingMonthlyPass;
-	}
+   public void setParkingHolidayPay(String parkingHolidayPay) {
+      this.parkingHolidayPay = parkingHolidayPay;
+   }
 
-	public int getParkingBaseCharge() {
-		return parkingBaseCharge;
-	}
+   public int getParkingCount() {
+      return parkingCount;
+   }
 
-	public void setParkingBaseCharge(int parkingBaseCharge) {
-		this.parkingBaseCharge = parkingBaseCharge;
-	}
+   public void setParkingCount(int parkingCount) {
+      this.parkingCount = parkingCount;
+   }
 
-	public int getParkingBaseTime() {
-		return parkingBaseTime;
-	}
+   public String getParkingMonthlyPass() {
+      return parkingMonthlyPass;
+   }
 
-	public void setParkingBaseTime(int parkingBaseTime) {
-		this.parkingBaseTime = parkingBaseTime;
-	}
+   public void setParkingMonthlyPass(String parkingMonthlyPass) {
+      this.parkingMonthlyPass = parkingMonthlyPass;
+   }
 
-	public int getParkingPlusCharge() {
-		return parkingPlusCharge;
-	}
+   public int getParkingBaseCharge() {
+      return parkingBaseCharge;
+   }
 
-	public void setParkingPlusCharge(int parkingPlusCharge) {
-		this.parkingPlusCharge = parkingPlusCharge;
-	}
+   public void setParkingBaseCharge(int parkingBaseCharge) {
+      this.parkingBaseCharge = parkingBaseCharge;
+   }
 
-	public int getParkingPlusTime() {
-		return parkingPlusTime;
-	}
+   public int getParkingBaseTime() {
+      return parkingBaseTime;
+   }
 
-	public void setParkingPlusTime(int parkingPlusTime) {
-		this.parkingPlusTime = parkingPlusTime;
-	}
+   public void setParkingBaseTime(int parkingBaseTime) {
+      this.parkingBaseTime = parkingBaseTime;
+   }
 
-	public String getParkingIdx() {
-		return parkingIdx;
-	}
+   public int getParkingPlusCharge() {
+      return parkingPlusCharge;
+   }
 
-	public void setParkingIdx(String parkingIdx) {
-		this.parkingIdx = parkingIdx;
-	}
+   public void setParkingPlusCharge(int parkingPlusCharge) {
+      this.parkingPlusCharge = parkingPlusCharge;
+   }
 
-	public String getParkingName() {
-		return parkingName;
-	}
+   public int getParkingPlusTime() {
+      return parkingPlusTime;
+   }
 
-	public void setParkingName(String parkingName) {
-		this.parkingName = parkingName;
-	}
+   public void setParkingPlusTime(int parkingPlusTime) {
+      this.parkingPlusTime = parkingPlusTime;
+   }
 
-	public String getParkingAddr() {
-		return parkingAddr;
-	}
+   public String getParkingIdx() {
+      return parkingIdx;
+   }
 
-	public void setParkingAddr(String parkingAddr) {
-		this.parkingAddr = parkingAddr;
-	}
+   public void setParkingIdx(String parkingIdx) {
+      this.parkingIdx = parkingIdx;
+   }
 
-	public String getParkingTel() {
-		return parkingTel;
-	}
+   public String getParkingName() {
+      return parkingName;
+   }
 
-	public void setParkingTel(String parkingTel) {
-		this.parkingTel = parkingTel;
-	}
+   public void setParkingName(String parkingName) {
+      this.parkingName = parkingName;
+   }
 
-	public String getParkingStartTimeWeekday() {
-		return parkingStartTimeWeekday;
-	}
+   public String getParkingAddr() {
+      return parkingAddr;
+   }
 
-	public void setParkingStartTimeWeekday(String parkingStartTimeWeekday) {
-		this.parkingStartTimeWeekday = parkingStartTimeWeekday;
-	}
+   public void setParkingAddr(String parkingAddr) {
+      this.parkingAddr = parkingAddr;
+   }
 
-	public String getParkingEndTimeWeekday() {
-		return parkingEndTimeWeekday;
-	}
+   public String getParkingTel() {
+      return parkingTel;
+   }
 
-	public void setParkingEndTimeWeekday(String parkingEndTimeWeekday) {
-		this.parkingEndTimeWeekday = parkingEndTimeWeekday;
-	}
+   public void setParkingTel(String parkingTel) {
+      this.parkingTel = parkingTel;
+   }
 
-	public String getParkingStartTimeWeekend() {
-		return parkingStartTimeWeekend;
-	}
+   public String getParkingStartTimeWeekday() {
+      return parkingStartTimeWeekday;
+   }
 
-	public void setParkingStartTimeWeekend(String parkingStartTimeWeekend) {
-		this.parkingStartTimeWeekend = parkingStartTimeWeekend;
-	}
+   public void setParkingStartTimeWeekday(String parkingStartTimeWeekday) {
+      this.parkingStartTimeWeekday = parkingStartTimeWeekday;
+   }
 
-	public String getParkingEndTimeWeekend() {
-		return parkingEndTimeWeekend;
-	}
+   public String getParkingEndTimeWeekday() {
+      return parkingEndTimeWeekday;
+   }
 
-	public void setParkingEndTimeWeekend(String parkingEndTimeWeekend) {
-		this.parkingEndTimeWeekend = parkingEndTimeWeekend;
-	}
+   public void setParkingEndTimeWeekday(String parkingEndTimeWeekday) {
+      this.parkingEndTimeWeekday = parkingEndTimeWeekday;
+   }
 
-	public String getParkingStartTimeHoliday() {
-		return parkingStartTimeHoliday;
-	}
+   public String getParkingStartTimeWeekend() {
+      return parkingStartTimeWeekend;
+   }
 
-	public void setParkingStartTimeHoliday(String parkingStartTimeHoliday) {
-		this.parkingStartTimeHoliday = parkingStartTimeHoliday;
-	}
+   public void setParkingStartTimeWeekend(String parkingStartTimeWeekend) {
+      this.parkingStartTimeWeekend = parkingStartTimeWeekend;
+   }
 
-	public String getParkingEndTimeHoliday() {
-		return parkingEndTimeHoliday;
-	}
+   public String getParkingEndTimeWeekend() {
+      return parkingEndTimeWeekend;
+   }
 
-	public void setParkingEndTimeHoliday(String parkingEndTimeHoliday) {
-		this.parkingEndTimeHoliday = parkingEndTimeHoliday;
-	}
+   public void setParkingEndTimeWeekend(String parkingEndTimeWeekend) {
+      this.parkingEndTimeWeekend = parkingEndTimeWeekend;
+   }
 
-	public String getParkingLat() {
-		return parkingLat;
-	}
+   public String getParkingStartTimeHoliday() {
+      return parkingStartTimeHoliday;
+   }
 
-	public void setParkingLat(String parkingLat) {
-		this.parkingLat = parkingLat;
-	}
+   public void setParkingStartTimeHoliday(String parkingStartTimeHoliday) {
+      this.parkingStartTimeHoliday = parkingStartTimeHoliday;
+   }
 
-	public String getParkingLon() {
-		return parkingLon;
-	}
+   public String getParkingEndTimeHoliday() {
+      return parkingEndTimeHoliday;
+   }
 
-	public void setParkingLon(String parkingLon) {
-		this.parkingLon = parkingLon;
-	}
+   public void setParkingEndTimeHoliday(String parkingEndTimeHoliday) {
+      this.parkingEndTimeHoliday = parkingEndTimeHoliday;
+   }
 
-	
-	
-	
+   public String getParkingLat() {
+      return parkingLat;
+   }
+
+   public void setParkingLat(String parkingLat) {
+      this.parkingLat = parkingLat;
+   }
+
+   public String getParkingLon() {
+      return parkingLon;
+   }
+
+   public void setParkingLon(String parkingLon) {
+      this.parkingLon = parkingLon;
+   }
+
+   
+   
+   
 }

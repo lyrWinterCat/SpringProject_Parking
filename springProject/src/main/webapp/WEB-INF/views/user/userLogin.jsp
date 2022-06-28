@@ -83,12 +83,17 @@
 								</ul>
 							</div>
 						</li>
-						<li><a href='userSignUp' class=""><i class="fa-solid fa-car-on"></i> <span>회원가입</span></a></li>
-						<li><a href="userLogin" class=""><i class="fa-solid fa-car"></i> <span>로그인</span></a></li>
-						<li><a href="userUpdate" class=""><i class="fa-solid fa-car-rear"></i> <span>회원정보 변경</span></a></li>
-						<li><a href="userDelete" class=""><i class="fa-solid fa-car-burst"></i> <span>회원 탈퇴</span></a></li>
-						<li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>임시자리</span></a></li>
-					</ul>
+						<li><a href='userSignUp' class=""><i
+                     class="fa-solid fa-car-on"></i> <span>회원가입</span></a></li>
+               <li><a href="userLogin" class=""><i
+                     class="fa-solid fa-car"></i> <span>로그인</span></a></li>
+               <li><a href="userLogin" onclick="alert('로그인 후 이용해주세요')" class=""><i
+                     class="fa-solid fa-car-rear"></i> <span>회원정보 변경</span></a></li>
+               <li><a href="userLogin" onclick="alert('로그인 후 이용해주세요')" class=""><i
+                     class="fa-solid fa-car-burst"></i> <span>회원 탈퇴</span></a></li>
+               <li><a href="icons.html" class=""><i
+                     class="fa-solid fa-car-side"></i> <span>임시자리</span></a></li>
+            </ul>
 				</nav>
 			</div>
 		</div>

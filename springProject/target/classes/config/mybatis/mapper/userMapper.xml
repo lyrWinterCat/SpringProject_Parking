@@ -8,14 +8,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from userinfo where userId=#{userId}
 	</select>
 	
-	<insert id="insert">
+	<insert id="user_insert">
 		insert into userinfo values(#{userId},#{userPwd},#{userName},#{userPhone1},#{userPhone2},#{userPhone3},
 		#{userNick},#{userPhoto},#{userEmail})
 	</insert>
 	
-	<select id="login" parameterType="map" resultType="Integer">
+	<select id="user_login" parameterType="map" resultType="Integer">
 		select count(userId) from userinfo
 		where userId=#{userId} and userPwd=#{userPwd}	
+	</select>
+	
+	<select id="checkId" parameterType="String" resultType="Integer">
+		select count(userId) from userinfo where userId=#{userId}
+	</select>
+	
+	<select id="checkNick" parameterType="String" resultType="Integer">
+		select count(userNick) from userinfo where userNick=#{userNick}
 	</select>
 	
 

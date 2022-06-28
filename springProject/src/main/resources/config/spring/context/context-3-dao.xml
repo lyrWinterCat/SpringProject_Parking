@@ -10,12 +10,28 @@
 	<!-- <context:component-scan base-package="com.korea.mybatis"/> -->
 	
 	<!-- 서비스 객체 자동생성 -->
-	<context:component-scan base-package="com.project.service"/>
+	<context:component-scan base-package="com.project.service"/>	
+	
+	<!-- 메일링 빈 -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com"/>
+		<property name="port" value="587"/>
+		<property name="defaultEncoding" value="utf-8"/>
+		<property name="username" value="korea1parking2project3@gmail.com"/>
+		<property name="password" value="xnlafmyilhwvykyo"/>
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.smtp.auth">true</prop> <!-- 2단계본인인증을 했으니 보안적으로 true라고 준다 -->
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.debug">true</prop>
+			</props>
+		</property>
+	</bean>
 	
 	<!-- mybatis - mapper 어노테이션 인식 -->
 	<mybatis-spring:scan base-package="com.project.mapper"/>
-	
-	
+		
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<!--
