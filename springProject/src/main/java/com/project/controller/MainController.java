@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,18 +14,24 @@ import java.util.Locale;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.project.service.ParkingService;
+
 import vo.ParkingVO;
+import vo.UserVO;
 
 @Controller
 public class MainController {
 	public static final String VIEW_PATH = "/WEB-INF/views/";
 	public static List<ParkingVO> list = new ArrayList<ParkingVO>();
 
+	@Autowired
+	ParkingService parkingService;
 	/*
 	 * @RequestMapping(value = {"/","/parking"}, method = RequestMethod.GET) public
 	 * String goMain() { return VIEW_PATH+"main.jsp"; }
@@ -34,7 +41,7 @@ public class MainController {
 	public String home(Locale locale, Model model) throws Exception {
 		// 1. URL을 만들기 위한 StringBuilder/ 오픈 API의요청 규격에 맞는 파라미터 생성, 발급받은 인증키.
 		StringBuilder urlBuilder = new StringBuilder(
-				"http://openapi.seoul.go.kr:8088/484d455a6e6c6f763635654a72706a/json/GetParkInfo/1/5/강남");
+				"http://openapi.seoul.go.kr:8088/484d455a6e6c6f763635654a72706a/json/GetParkInfo/1/500/강남");
 
 		// 3. URL 객체 생성.
 		URL url = new URL(urlBuilder.toString());
@@ -80,24 +87,39 @@ public class MainController {
 
 			ParkingVO vo = new ParkingVO();
 			
-			System.out.println(jsonObject.get("PARKING_NAME").toString());
+			//시간 사이에 : 넣는 작업
+			String holidayEndTime = jsonObject.get("HOLIDAY_END_TIME").toString().substring(0,2) + " : " + jsonObject.get("HOLIDAY_END_TIME").toString().substring(2,4);
+			String weekdayEndTime = jsonObject.get("WEEKDAY_END_TIME").toString().substring(0,2) + " : " + jsonObject.get("WEEKDAY_END_TIME").toString().substring(2,4);
+			String weekendEndTime = jsonObject.get("WEEKEND_END_TIME").toString().substring(0,2) + " : " + jsonObject.get("WEEKEND_END_TIME").toString().substring(2,4);
+			String holidayBeginTime = jsonObject.get("HOLIDAY_BEGIN_TIME").toString().substring(0,2) + " : " + jsonObject.get("HOLIDAY_BEGIN_TIME").toString().substring(2,4);
+			String weekdayBeginTime = jsonObject.get("WEEKDAY_BEGIN_TIME").toString().substring(0,2) + " : " + jsonObject.get("WEEKDAY_BEGIN_TIME").toString().substring(2,4);
+			String weekendBeginTime = jsonObject.get("WEEKEND_BEGIN_TIME").toString().substring(0,2) + " : " + jsonObject.get("WEEKEND_BEGIN_TIME").toString().substring(2,4);
+			
+			//돈 소수점
+			String monthlyPass = String.format("%,d", Integer.parseInt(jsonObject.get("FULLTIME_MONTHLY").toString()));
+
+			vo.setParkingIdx(jsonObject.get("PARKING_CODE").toString());
 			vo.setParkingName(jsonObject.get("PARKING_NAME").toString());
 			vo.setParkingAddr(jsonObject.get("ADDR").toString());
 			vo.setParkingBaseCharge(Integer.parseInt(jsonObject.get("RATES").toString().substring(0, jsonObject.get("RATES").toString().lastIndexOf("."))));
 			vo.setParkingBaseTime(Integer.parseInt(jsonObject.get("TIME_RATE").toString().substring(0, jsonObject.get("TIME_RATE").toString().lastIndexOf("."))));
 			vo.setParkingCount(Integer.parseInt(jsonObject.get("CAPACITY").toString().substring(0, jsonObject.get("CAPACITY").toString().lastIndexOf("."))));
-			vo.setParkingEndTimeHoliday(jsonObject.get("HOLIDAY_END_TIME").toString());
-			vo.setParkingEndTimeWeekday(jsonObject.get("WEEKDAY_END_TIME").toString());
-			vo.setParkingEndTimeWeekend(jsonObject.get("WEEKEND_END_TIME").toString());
+			vo.setParkingEndTimeHoliday(holidayEndTime);
+			vo.setParkingEndTimeWeekday(weekdayEndTime);
+			vo.setParkingEndTimeWeekend(weekendEndTime);
 			vo.setParkingLat(jsonObject.get("LAT").toString());
 			vo.setParkingLon(jsonObject.get("LNG").toString());
-			vo.setParkingMonthlyPass(Integer.parseInt(jsonObject.get("FULLTIME_MONTHLY").toString()));
+			vo.setParkingMonthlyPass(monthlyPass);
 			vo.setParkingPlusCharge(Integer.parseInt(jsonObject.get("ADD_RATES").toString().substring(0, jsonObject.get("ADD_RATES").toString().lastIndexOf("."))));
 			vo.setParkingPlusTime(Integer.parseInt(jsonObject.get("ADD_TIME_RATE").toString().substring(0, jsonObject.get("ADD_TIME_RATE").toString().lastIndexOf("."))));
-			vo.setParkingStartTimeHoliday(jsonObject.get("HOLIDAY_BEGIN_TIME").toString());
-			vo.setParkingStartTimeWeekday(jsonObject.get("WEEKDAY_BEGIN_TIME").toString());
-			vo.setParkingStartTimeWeekend(jsonObject.get("WEEKEND_BEGIN_TIME").toString());
+			vo.setParkingStartTimeHoliday(holidayBeginTime);
+			vo.setParkingStartTimeWeekday(weekdayBeginTime);
+			vo.setParkingStartTimeWeekend(weekendBeginTime);
 			vo.setParkingTel(jsonObject.get("TEL").toString());
+			vo.setParkingSatPay(jsonObject.get("SATURDAY_PAY_NM").toString());
+			vo.setParkingHolidayPay(jsonObject.get("HOLIDAY_PAY_NM").toString());
+			
+			//parkingService.addParking(vo);
 			
 			list.add(vo);
 		}
@@ -118,4 +140,5 @@ public class MainController {
 
 		return VIEW_PATH + "main.jsp";
 	}
+
 }
