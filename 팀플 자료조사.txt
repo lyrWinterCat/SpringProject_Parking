@@ -1,0 +1,133 @@
+게시판
+회원가입, 로그인, 아이디찾기, 비밀번호찾기
+api...
+
+
+필터
+동(도로명, 지번주소 활용),
+주차구획수?(애매 필수X),
+운영요일(사용날짜로 필터지정),
+운영시간(날짜에 따라 다름),
+요금정보,
+결제 방법.
+
+--디비
+관리자(
+아이디
+이름
+닉네임
+전화번호
+비밀번호
+프로필사진
+이메일(생각)
+);
+
+
+
+
+CREATE TABLE USERINFO(
+	USERID VARCHAR2(100) PRIMARY KEY,
+	USERPWD VARCHAR2(100) NOT NULL,
+	USERNAME VARCHAR2(100) NOT NULL,
+	USERPHONE1 VARCHAR2(50) NOT NULL,
+	USERPHONE2 VARCHAR2(50) NOT NULL,
+	USERPHONE3 VARCHAR2(50) NOT NULL,
+	USERNICK VARCHAR2(100) NOT NULL,
+	USERPHOTO VARCHAR2(100) NOT NULL,
+	USEREMAIL VARCHAR2(200) NOT NULL
+);
+
+INSERT INTO USERINFO VALUES(
+	'test','1111','car','010','1234','1234','parking','photo','car@naver.com'
+);
+INSERT INTO USERINFO VALUES(
+	'test2','2222','truck','010','2222','1234','king','photo2','car2@naver.com'
+);
+
+
+
+
+
+--주차장 테이블
+주차장 관리번호
+주차장 이름
+주차장 주소
+주차 구획수
+차량 요일제
+운영 요일
+운영 시간
+기본 요금
+추가 요금
+위도
+경도
+CREATE TABLE PARKING(
+	PARKING_IDX VARCHAR2(255) PRIMARY KEY,
+	PARKING_NAME VARCHAR2(255) NOT NULL,
+	PARKING_ADDR VARCHAR2(255) NOT NULL,
+	PARKING_COUNT NUMBER(5) NOT NULL,
+	PARKING_DAYSYSTEM VARCHAR2(10),
+	PARKING_DAY VARCHAR2(10),
+	PARKING_TIME VARCHAR2(10),
+	PARKING_BASEMONEY NUMBER(10),
+	PARKING_PLUSMONEY NUMBER(10),
+	PARKING_LAT NUMBER(20),
+	PARKING_LON NUMBER(20)
+);
+
+즐겨찾기
+idx(pri)
+회원.ID(for)
+주차장관리번호(for)
+
+--나중에 한번더보기
+필터
+idx(pri)
+동
+운영요일
+운영시간(?)
+주차장관리번호(for)
+
+
+후기게시판
+idx(pri)
+제목
+내용
+평점(어떤식으로 활용할건지 좀 더 생각해보기)
+아이디
+작성일자
+회원ID(FOR)
+조회수
+
+자유게시판
+idx(pri)
+닉네임
+제목
+내용
+아이디
+작성일자
+회원ID(FOR)
+조회수
+
+공지사항
+idx(pri)
+닉네임 
+제목
+내용
+아이디 
+작성일자
+
+부평역 맛집 게시판
+
+
+
+-역할분담
+로그인화면, 에러처리
+
+주차장API
+
+게시판
+
+
+할일
+1. 주차장 api 임시 연동해보기
+
