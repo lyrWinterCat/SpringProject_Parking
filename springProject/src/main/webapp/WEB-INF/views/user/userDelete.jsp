@@ -74,7 +74,7 @@
 								</ul>
 							</div>
 						</li>
-						<li><a href="parking" onclick="alert('로그아웃 되었습니다.')" class=""><i class="fa-solid fa-car"></i> <span>로그아웃</span></a></li>
+						<li><a href="logout" onclick="alert('로그아웃 되었습니다.')" class=""><i class="fa-solid fa-car"></i> <span>로그아웃</span></a></li>
 						<li><a href="userUpdate" class=""><i class="fa-solid fa-car-rear"></i> <span>회원정보 변경</span></a></li>
 						<li><a href="userDelete" class=""><i class="fa-solid fa-car-burst"></i> <span>회원 탈퇴</span></a></li>
 						<li><a href="parking" class=""><i class="lnr lnr-linearicons"></i> <span>임시자리</span></a></li>
@@ -91,7 +91,7 @@
 						
 				<div align="center">
 					<h1>회원 탈퇴</h1>
-					<form action="join_ok.jsp" method="post">
+					<form action="deleteOk" method="post">
 					<input type="hidden" name="userId" value="user01">
 						<p>비밀번호를 입력해주세요</p>
 						<input type="password" name="pwd" value="userPwd"><br><br>
@@ -122,7 +122,7 @@
 		function userDel(f){
 			// 정말로 탈퇴하시겠습니까? 에서 확인을 누른다면 탈퇴
 			//비밀번호가 user 비밀번호가 일치하다면 유저 지우기
-			// 보내는 값: primary 키인 아이디.
+			// 보내는 값: primary 키인 아이디, pwd >> 일치시 회원 탈퇴
 			
 		}
 	

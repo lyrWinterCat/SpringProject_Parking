@@ -40,15 +40,17 @@
 						<i class="lnr lnr-arrow-left-circle"></i>
 					</button>
 				</div>
-				<form class="navbar-form navbar-left">
+				
+				<div class="navbar-form navbar-left" style="padding: 0px; margin-left:10px;">
+					<img src="resources/assets/img/banner1.png" style="margin-right:5px;">
+					<img src="resources/assets/img/banner2.png">
+				</div>
+				<!-- <form class="navbar-form navbar-left">
 					<div class="input-group">
-						<input type="text" value="" class="form-control"
-							placeholder="검색할 내용을 입력해주세요" style="width: 400px;"> <span
-							class="input-group-btn"><button type="button"
-								class="btn btn-primary">Go</button></span>
+						<p>광고 배너 들어갈 공간</p>
 					</div>
-				</form>
-				<div class="navbar-btn navbar-btn-right">
+				</form> -->
+				<div class="navbar-btn navbar-btn-right" style="margin-right:20px;">
 					<img src="resources/assets/img/parkingMap.png" alt="map Logo">
 				</div>
 			</div>
@@ -59,7 +61,7 @@
 			<div class="sidebar-scroll">
 				<ul class="nav">
 						<div style="text-align:center; font-size:30px;">
-							<li><img src="resources/assets/img/user.png" class="img-circle" alt="Avatar" style="width : 90%; margin-top : 30px;"> <span>Admin</span></li>
+							<li><img src="resources/assets/img/user.png" class="img-circle" alt="Avatar" style="width : 90%; margin-top : 30px;"> <span>${list[0].userNick}</span></li>
 						</div>
 						<li><a href="parking" class="active"><i class="lnr lnr-home"></i> <span>메인화면</span></a></li>
 						<li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i> <span>공지사항</span></a></li>
@@ -74,7 +76,7 @@
 								</ul>
 							</div>
 						</li>
-						<li><a href="parking" onclick="alert('로그아웃 되었습니다.')" class=""><i class="fa-solid fa-car"></i> <span>로그아웃</span></a></li>
+						<li><a href="logout" onclick="alert('로그아웃 되었습니다.')" class=""><i class="fa-solid fa-car"></i> <span>로그아웃</span></a></li>
 						<li><a href="userUpdate" class=""><i class="fa-solid fa-car-rear"></i> <span>회원정보 변경</span></a></li>
 						<li><a href="userDelete" class=""><i class="fa-solid fa-car-burst"></i> <span>회원 탈퇴</span></a></li>
 						<li><a href="parking" class=""><i class="fa-solid fa-car-side"></i> <span>임시자리</span></a></li>

@@ -155,15 +155,11 @@
 	<script src="resources/assets/scripts/klorofil-common.js"></script>
 	<script>
 		function send(f){
-	// 유효성 검사	
-
-			action="userSignOk";
-			method="post";
+			// 유효성 검사	
+			f.action="userSignOk";
+			f.method="post";
+			f.submit();
 		}	
-	
-		
-		
-	
 	</script>
 
 	<style>
