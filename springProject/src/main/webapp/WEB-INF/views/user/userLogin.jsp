@@ -103,9 +103,9 @@
 					<h3>로그인 페이지</h3>
 					<form action="loginOk" method="post">
 						아이디<br>
-						<input type="text" name="id" size="20"><br><br>
+						<input type="text" name="userId" size="20"><br><br>
 						비밀번호<br>
-						<input type="password" name="pw" size="20"><br><br>
+						<input type="password" name="userPwd" size="20"><br><br>
 						<input type="checkbox" value="autologin">자동으로 로그인하기
 						<input type="submit" value="로그인">
 					</form>
@@ -113,8 +113,10 @@
 				<input type="button" name="findIdPwd" value="아이디/비밀번호 찾기" onclick="">
 				<br><br>
 			<%
+			//https://loosie.tistory.com/301 
+			// 네이버 토큰 사용 설명
 		    String clientId = "TXQEEu2dkgi7CDCThSKM";//애플리케이션 클라이언트 아이디값";
-		    String redirectURI = URLEncoder.encode("http://127.0.0.1:9090/parking", "UTF-8");
+		    String redirectURI = URLEncoder.encode("http://localhost:9090/sample/loginOk", "UTF-8");
 		    SecureRandom random = new SecureRandom();
 		    String state = new BigInteger(130, random).toString();
 		    String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code";

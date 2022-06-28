@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 	<title> 주차장 찾기 템플릿</title>
@@ -74,7 +75,7 @@
 								</ul>
 							</div>
 						</li>
-						<li><a href="parking" onclick="alert('로그아웃 되었습니다.')" class=""><i class="fa-solid fa-car"></i> <span>로그아웃</span></a></li>
+						<li><a href="logout" onclick="alert('로그아웃 되었습니다.')" class=""><i class="fa-solid fa-car"></i> <span>로그아웃</span></a></li>
 						<li><a href="userUpdate" class=""><i class="fa-solid fa-car-rear"></i> <span>회원정보 변경</span></a></li>
 						<li><a href="userDelete" class=""><i class="fa-solid fa-car-burst"></i> <span>회원 탈퇴</span></a></li>
 						<li><a href="typography.html" class=""><i class="lnr lnr-text-format"></i> <span>임시자리</span></a></li>
@@ -90,27 +91,27 @@
 			<div class="main-content">
 				<div align="center">
 					<h1>회원 정보 수정</h1>
-					<form action="join_ok.jsp" method="post">
+					<form action="updateOk" method="post">
 						<div class="text-box" style="width:fit-content;"  align="left">
 							<div class="update-text" style="margin:10px auto">아이디 <br>
-							<input type="text" name="userId" value="user01" readonly  size="25" style="background-color : #e2e2e2;"></div>
+							<input type="text" name="userId" value="${list[0].userId}" readonly  size="25" style="background-color : #e2e2e2;"></div>
 							<div class="update-text" style="margin:10px auto">비밀번호<br>
 								<div class="pwd"><input type="password" name="userPwd" placeholder="원래 비밀번호" size="25"></div> <br>
 								<div class="pwd"><input type="password" name="newPwd" placeholder="새 비밀번호" size="25"> </div>	
 							</div>						
 							<div class="update-text" style="margin:10px auto">이름<br>
-							<input type="text" name="userName" value="홍길동" readonly size="25" style="background-color : #e2e2e2;"></div>
+							<input type="text" name="userName" value="${list[0].userName}" readonly size="25" style="background-color : #e2e2e2;"></div>
 							<div class="update-text" style="margin:10px auto">전화번호 <br>
-		 					<input type="text" name="userPhone1" size="4" placeholder="010">
-		 					<input type="text" name="userPhone2" size="4" placeholder="1234">
-		 					<input type="text" name="userPhone3" size="4" placeholder="1234"></div>
+		 					<input type="text" name="userPhone1" size="4" placeholder="${list[0].userPhone1}">
+		 					<input type="text" name="userPhone2" size="4" placeholder="${list[0].userPhone2}">
+		 					<input type="text" name="userPhone3" size="4" placeholder="${list[0].userPhone3}"></div>
 		 				
 							<div class="update-text" style="margin:10px auto">이메일<br>
-							<input type="text" name="userEmail" size="25">
+							<input type="text" name="userEmail" size="25" placeholder="${list[0].userEmail}">
 							<button>이메일 인증</button></div>
 		
 							<div class="update-text" style="margin:10px auto">닉네임<br>
-							<input type="text" name="userNick" size="25"> <button>중복 검사</button>
+							<input type="text" name="userNick" size="25" placeholder="${list[0].userNick}"> <button>중복 검사</button>
 							</div>
 						</div>
 

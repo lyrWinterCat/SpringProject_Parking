@@ -24,17 +24,17 @@ import vo.ParkingVO;
 public class MainController {
 	public static final String VIEW_PATH = "/WEB-INF/views/";
 	public static List<ParkingVO> list = new ArrayList<ParkingVO>();
-	
+
 	/*
 	 * @RequestMapping(value = {"/","/parking"}, method = RequestMethod.GET) public
 	 * String goMain() { return VIEW_PATH+"main.jsp"; }
 	 */
-	
-	@RequestMapping(value = {"/", "/parking"}, method = RequestMethod.GET)
+
+	@RequestMapping(value = { "/", "/parking" }, method = RequestMethod.GET)
 	public String home(Locale locale, Model model) throws Exception {
 		// 1. URL을 만들기 위한 StringBuilder/ 오픈 API의요청 규격에 맞는 파라미터 생성, 발급받은 인증키.
 		StringBuilder urlBuilder = new StringBuilder(
-				"https://api.odcloud.kr/api/15003009/v1/uddi:bdc4a735-dcac-47e1-9d4f-f88adc53ccc5?page=1&perPage=26&returnType=JSON&serviceKey=mu9DiWf%2Baze2UmlectExLlwUwRlk%2FJ5zMoa%2B9xGRiFcdAfMp8MfrR6wCFMHUmjOc3947X2MQsklVlk2CNGE1ng%3D%3D"); 
+				"http://openapi.seoul.go.kr:8088/484d455a6e6c6f763635654a72706a/json/GetParkInfo/1/5/강남");
 
 		// 3. URL 객체 생성.
 		URL url = new URL(urlBuilder.toString());
@@ -70,36 +70,52 @@ public class MainController {
 		// 2. 문자열을 JSON 형태로 JSONObject 객체에 저장.
 		JSONObject obj = (JSONObject) parser.parse(sb.toString());
 		// 3. 필요한 리스트 데이터 부분만 가져와 JSONArray로 저장.
-		JSONArray dataArr = (JSONArray) obj.get("data");
-		
-		for(int i=0; i<dataArr.size(); i++) {
-			//이런식으로 값을 하나씩 받아올 수 있음
+		// JSON 형식에 따라 GetParkInfo 안에 row 안에 정보를 갖고오기
+		JSONObject obj2 = (JSONObject) obj.get("GetParkInfo");
+		JSONArray dataArr = (JSONArray) obj2.get("row");
+
+		for (int i = 0; i < dataArr.size(); i++) { 
+			// 이런식으로 값을 하나씩 받아올 수 있음 JSONObject
 			JSONObject jsonObject = (JSONObject) dataArr.get(i);
-			
+
 			ParkingVO vo = new ParkingVO();
-			vo.setLat(jsonObject.get("위도").toString());
-			vo.setLon(jsonObject.get("경도").toString());
-			vo.setAddr(jsonObject.get("소재지위치").toString());
-			vo.setCount(Integer.parseInt(jsonObject.get("면수").toString()));
-			vo.setPrice(Integer.parseInt(jsonObject.get("야간요금").toString()));
-			vo.setTime(jsonObject.get("야간시간").toString());
+			
+			System.out.println(jsonObject.get("PARKING_NAME").toString());
+			vo.setParkingName(jsonObject.get("PARKING_NAME").toString());
+			vo.setParkingAddr(jsonObject.get("ADDR").toString());
+			vo.setParkingBaseCharge(Integer.parseInt(jsonObject.get("RATES").toString().substring(0, jsonObject.get("RATES").toString().lastIndexOf("."))));
+			vo.setParkingBaseTime(Integer.parseInt(jsonObject.get("TIME_RATE").toString().substring(0, jsonObject.get("TIME_RATE").toString().lastIndexOf("."))));
+			vo.setParkingCount(Integer.parseInt(jsonObject.get("CAPACITY").toString().substring(0, jsonObject.get("CAPACITY").toString().lastIndexOf("."))));
+			vo.setParkingEndTimeHoliday(jsonObject.get("HOLIDAY_END_TIME").toString());
+			vo.setParkingEndTimeWeekday(jsonObject.get("WEEKDAY_END_TIME").toString());
+			vo.setParkingEndTimeWeekend(jsonObject.get("WEEKEND_END_TIME").toString());
+			vo.setParkingLat(jsonObject.get("LAT").toString());
+			vo.setParkingLon(jsonObject.get("LNG").toString());
+			vo.setParkingMonthlyPass(Integer.parseInt(jsonObject.get("FULLTIME_MONTHLY").toString()));
+			vo.setParkingPlusCharge(Integer.parseInt(jsonObject.get("ADD_RATES").toString().substring(0, jsonObject.get("ADD_RATES").toString().lastIndexOf("."))));
+			vo.setParkingPlusTime(Integer.parseInt(jsonObject.get("ADD_TIME_RATE").toString().substring(0, jsonObject.get("ADD_TIME_RATE").toString().lastIndexOf("."))));
+			vo.setParkingStartTimeHoliday(jsonObject.get("HOLIDAY_BEGIN_TIME").toString());
+			vo.setParkingStartTimeWeekday(jsonObject.get("WEEKDAY_BEGIN_TIME").toString());
+			vo.setParkingStartTimeWeekend(jsonObject.get("WEEKEND_BEGIN_TIME").toString());
+			vo.setParkingTel(jsonObject.get("TEL").toString());
 			
 			list.add(vo);
 		}
+
 		// 4. model에 담아준다.
 		model.addAttribute("list", list);
 
-		return VIEW_PATH+"main.jsp";
+		return VIEW_PATH + "main.jsp";
 	}
-	
+
 	@RequestMapping("/naverMap")
 	public String naverMap(Model model) {
-		
+
 		System.out.println("네이버지도호출");
-		
+
 		model.addAttribute("list", list);
 		model.addAttribute("size", list.size());
-		
-		return VIEW_PATH+"main.jsp";
+
+		return VIEW_PATH + "main.jsp";
 	}
 }
