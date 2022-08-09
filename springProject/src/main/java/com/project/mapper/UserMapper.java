@@ -14,5 +14,9 @@ public interface UserMapper {
 	public Integer user_login(HashMap<String, String> userMap);
 	public Integer checkId(String userId);
 	public Integer checkNick(String userNick);
+	public Integer user_update(UserVO userVO);
+	public Integer user_delete(String userId);
+	public String user_find_id(UserVO userVO);
+	public Integer user_pwd_update(HashMap<String, String> userMap);
 	
 }

@@ -9,4 +9,5 @@ import vo.ParkingVO;
 @Mapper
 public interface ParkingMapper {
 	public void insertParking(ParkingVO parkingVO);
+	public List<ParkingVO> search(String parkingAddr);
 }

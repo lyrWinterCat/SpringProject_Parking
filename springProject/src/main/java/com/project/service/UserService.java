@@ -40,5 +40,26 @@ public class UserService {
 	public Integer login(HashMap<String, String> userMap) {
 		return userMapper.user_login(userMap);
 	}
+	
+	// 수정
+	public boolean modify(UserVO userVO) {
+		return userMapper.user_update(userVO)!=0;
+	}
+	
+	//삭제
+	public boolean delete(String userId) {
+		return userMapper.user_delete(userId)!=0;
+	}
+
+	//아이디 조회
+	public String findUserId(UserVO userVO) {
+		return userMapper.user_find_id(userVO);
+		
+	}
+	// 비밀번호 변경
+	public boolean changeUserPwd(HashMap<String, String> userMap) {
+		return userMapper.user_pwd_update(userMap)!=0;
+	}	
+	
 		
 }

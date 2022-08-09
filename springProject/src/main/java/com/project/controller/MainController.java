@@ -4,12 +4,13 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.text.DateFormat;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -19,8 +20,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.project.service.ParkingService;
+import com.project.service.UserService;
 
 import vo.ParkingVO;
 import vo.UserVO;
@@ -28,17 +31,17 @@ import vo.UserVO;
 @Controller
 public class MainController {
 	public static final String VIEW_PATH = "/WEB-INF/views/";
-	public static List<ParkingVO> list = new ArrayList<ParkingVO>();
+	public static List<ParkingVO> list;
 
 	@Autowired
 	ParkingService parkingService;
-	/*
-	 * @RequestMapping(value = {"/","/parking"}, method = RequestMethod.GET) public
-	 * String goMain() { return VIEW_PATH+"main.jsp"; }
-	 */
+	
+	@Autowired
+	UserService userService;
 
-	@RequestMapping(value = { "/", "/parking" }, method = RequestMethod.GET)
-	public String home(Locale locale, Model model) throws Exception {
+	//처음 로드 시 서울 공영 주차장 API 연동 후 리스트 보여줌
+	@RequestMapping(value = { "/", "/parking" }, method = {RequestMethod.GET,RequestMethod.POST})
+	public String home(HttpServletRequest request,Locale locale, Model model, UserVO userVO) throws Exception {
 		// 1. URL을 만들기 위한 StringBuilder/ 오픈 API의요청 규격에 맞는 파라미터 생성, 발급받은 인증키.
 		StringBuilder urlBuilder = new StringBuilder(
 				"http://openapi.seoul.go.kr:8088/484d455a6e6c6f763635654a72706a/json/GetParkInfo/1/500/강남");
@@ -81,6 +84,7 @@ public class MainController {
 		JSONObject obj2 = (JSONObject) obj.get("GetParkInfo");
 		JSONArray dataArr = (JSONArray) obj2.get("row");
 
+		list = new ArrayList<ParkingVO>();
 		for (int i = 0; i < dataArr.size(); i++) { 
 			// 이런식으로 값을 하나씩 받아올 수 있음 JSONObject
 			JSONObject jsonObject = (JSONObject) dataArr.get(i);
@@ -119,6 +123,9 @@ public class MainController {
 			vo.setParkingSatPay(jsonObject.get("SATURDAY_PAY_NM").toString());
 			vo.setParkingHolidayPay(jsonObject.get("HOLIDAY_PAY_NM").toString());
 			
+			// 첫 실행시 주석 풀고 실행
+			//실행 이후 주석처리 하고 다시 실행
+			//임시 디비 추가
 			//parkingService.addParking(vo);
 			
 			list.add(vo);
@@ -126,19 +133,65 @@ public class MainController {
 
 		// 4. model에 담아준다.
 		model.addAttribute("list", list);
+		
+		//로그인 session이 있다면 해당 정보넘겨주기
+		HttpSession session;		
+		
+		if(request.isRequestedSessionIdValid()) {			
+			session = request.getSession();
+			
+			if(session.getAttribute("login")==null) {
+				System.out.println("세션없는곳으로 들어옴");
+				return VIEW_PATH + "main.jsp";
+			} else {
+				System.out.println("세션있는곳으로 들어옴");
+				System.out.println("로그인 세션 : "+session.getAttribute("login"));
+				if(((String)session.getAttribute("login")).equals("common")) {
+					String userId=(String)session.getAttribute("userId");
+					List<UserVO> userVo =userService.getList(userId);
+					System.out.println("userId = "+(String)session.getAttribute("userId"));
+					model.addAttribute("userList", userVo);			
+				}
+				else if(((String)session.getAttribute("login")).equals("naver")) {
+					String userNick=(String)session.getAttribute("userNick");
+					String userPhotoName=(String)session.getAttribute("userPhotoName");
+					userVO.setUserNick(userNick);
+					userVO.setUserPhotoName(userPhotoName);
+					List<UserVO> userVo = new ArrayList<UserVO>();
+					userVo.add(userVO);
+					model.addAttribute("userList", userVo);			
+				}				
+			}
+		}
 
 		return VIEW_PATH + "main.jsp";
 	}
-
-	@RequestMapping("/naverMap")
-	public String naverMap(Model model) {
-
-		System.out.println("네이버지도호출");
-
-		model.addAttribute("list", list);
-		model.addAttribute("size", list.size());
-
-		return VIEW_PATH + "main.jsp";
+	
+	//검색 결과
+	@RequestMapping("/search")
+	@ResponseBody
+	public HashMap<String,Object> search(Model model, HttpServletRequest request) {
+		HashMap<String,Object> map = new HashMap<String,Object>(); 
+		
+		String parkingAddr = request.getParameter("ParkingAddr");
+		list = new ArrayList<ParkingVO>();
+		list = parkingService.searchList(parkingAddr); //DB조회
+		map.put("list", list);
+		
+		if(list.size() != 0) {
+			map.put("status", "ok");
+			model.addAttribute("status", "ok");
+		} else {
+			map.put("status", "no");
+			model.addAttribute("status", "no");
+		}
+		
+		return map;
 	}
+	
+	@RequestMapping("/favorites")
+	   public String goFavorites() {
+	      return VIEW_PATH+"sorryBoard.jsp";
+	   }
 
 }

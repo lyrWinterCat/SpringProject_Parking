@@ -14,20 +14,34 @@
 	
 	<!-- 메일링 빈 -->
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-		<property name="host" value="smtp.gmail.com"/>
-		<property name="port" value="587"/>
-		<property name="defaultEncoding" value="utf-8"/>
-		<property name="username" value="korea1parking2project3@gmail.com"/>
-		<property name="password" value="xnlafmyilhwvykyo"/>
-		<property name="javaMailProperties">
-			<props>
-				<prop key="mail.transport.protocol">smtp</prop>
-				<prop key="mail.smtp.auth">true</prop> <!-- 2단계본인인증을 했으니 보안적으로 true라고 준다 -->
-				<prop key="mail.smtp.starttls.enable">true</prop>
-				<prop key="mail.debug">true</prop>
-			</props>
-		</property>
+    	<property name="host" value="smtp.gmail.com" />
+    	<property name="port" value="587" />
+    	<property name="username" value="korea1parking2project3@gmail.com" />
+    	<property name="password" value="xnlafmyilhwvykyo" />
+    	<property name="javaMailProperties">
+        	<props>
+            	<prop key="mail.transport.protocol">smtp</prop>
+            	<prop key="mail.smtp.auth">true</prop>
+            	<prop key="mail.smtp.starttls.enable">true</prop>
+            	<prop key="mail.debug">true</prop>
+           		<prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
+				<prop key="mail.smtp.ssl.protocols">TLSv1.2</prop>
+        	</props>
+    	</property>
 	</bean>
+	
+	<!-- 파일 업로드 빈 -->
+	
+	<!-- MultipartResolver -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="utf-8"/>
+		
+		<!-- 최대 업로드 용량 약10mb로 지정-->
+		<property name="maxUploadSize" value="1048576"/>
+	</bean>
+
+	<!-- 네이버 로그인 -->
+	
 	
 	<!-- mybatis - mapper 어노테이션 인식 -->
 	<mybatis-spring:scan base-package="com.project.mapper"/>
