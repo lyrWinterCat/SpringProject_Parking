@@ -16,6 +16,10 @@
 	<resources mapping="/resources/**" location="/resources/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	
+	<!-- 네이버 로그인을 위한 빈 생성 -->	
+	
+	
 	<!-- <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
@@ -25,6 +29,10 @@
 	<context:component-scan base-package="com.project.exception" />
 	<context:component-scan base-package="com.project.controller" />
 	<context:component-scan base-package="com.project.controller.user" />
+	<context:component-scan base-package="com.project.controller.board" />
+	<context:component-scan base-package="com.project.controller.notice" />
+	<context:component-scan base-package="com.project.controller.reply" />
+	<context:component-scan base-package="com.project.controller.review" />
 	
 	<!-- 수동생성 -->
 <!-- 	<beans:bean id="deptController" class="com.korea.mybatis.DeptController">

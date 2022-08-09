@@ -12,7 +12,6 @@
 	<!-- 별칭 주는 부분 -->
 	<typeAliases>
 		<typeAlias type="vo.UserVO" alias="user"/>
-		<typeAlias type="vo.AdminVO" alias="admin"/>
 
 	</typeAliases>
 	
