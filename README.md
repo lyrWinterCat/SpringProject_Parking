@@ -38,28 +38,25 @@
 ## 개발 환경
 
 ### 사용 언어
-
-### 데이터 관리
-
-### 프레임워크
-
 - HTML, CSS, JS
 - jQuery
 - JAVA
+
+### 데이터 관리
 - ORACLE
 - MyBatis
 
+### 프레임워크
 - Spring
 
 ### 개발툴
-
-### 서버
-
-### 활용 API
-
 - Eclipse
 - DBeaver
+
+### 서버
 - Apache Tomcat 8.5
+
+### 활용 API
 - NAVER Map API
 - 서울 열린 데이터 광장 API
 - NAVER Login API
