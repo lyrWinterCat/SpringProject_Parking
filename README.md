@@ -29,11 +29,11 @@
 
 ## 프로젝트 기획 및 구조
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c7e31d08-0044-4a17-9b73-6c01ee684361/Untitled.png)
+![plan](https://user-images.githubusercontent.com/103623292/197124126-93bcaaa6-a826-4f8e-8d7c-0b02dde9ee5b.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f8d321a4-d6a7-410c-b24d-dd538e111581/Untitled.png)
+![plan2](https://user-images.githubusercontent.com/103623292/197124129-8d886f95-3d95-40be-bc40-748e0aa2e6d2.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/88e301c2-67af-4dd1-93f8-0be881654514/Untitled.png)
+![plan3](https://user-images.githubusercontent.com/103623292/197124133-bba7b889-7fbb-40cb-9a74-9b1f75a3aaae.png)
 
 ## 개발 환경
 
@@ -70,7 +70,7 @@
 
 ## 1. 사이트 메인 화면 구현 - 이예림
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6e370aaf-18a1-4325-9570-f3b1c64be560/Untitled.png)
+![main1](https://user-images.githubusercontent.com/103623292/197124111-7c8156f3-b3c7-4691-8aa9-e73a14016719.png)
 
 ### 강남 주차장 알리미 사이트 프론트엔드 제작
 
@@ -88,13 +88,13 @@
 
 ### 사이트 회원가입 기능 구현
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/182ee6b7-57a2-4966-a065-fa060d8088df/Untitled.png)
+![main2](https://user-images.githubusercontent.com/103623292/197124113-9dcc9944-dfc1-4f92-91dc-e38ffd3c1805.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cd8a4c98-9e2e-49c7-a06f-ec6733634e08/Untitled.png)
+![main3](https://user-images.githubusercontent.com/103623292/197124116-cd406313-3c74-4e4a-a39a-9f71d9d68fdb.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b61c3ea4-c60a-4248-8d44-3ba873a82746/Untitled.png)
+![main4](https://user-images.githubusercontent.com/103623292/197124117-48e82bc4-1ac4-4c96-99bd-7f32c63e2441.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8573c1bc-13a6-4877-a419-0f2823011da4/Untitled.png)
+![main5](https://user-images.githubusercontent.com/103623292/197124118-bbd8663e-6cf8-4738-bd89-2836bcccc752.png)
 
 ### 구체적인 기능
 
@@ -136,11 +136,11 @@ Service클래스에서 MailSendService를 생성하고 난수 발생 메서드�
 
 ### 일반 회원 로그인 화면과 네이버 로그인 화면
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f20a5f29-72eb-4063-a697-aafaa90554c1/Untitled.png)
+![naver1](https://user-images.githubusercontent.com/103623292/197124121-a4a8ca79-3154-4ead-aaed-d7383144e998.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/69c296a8-7c22-4b28-962b-fd83a727f157/Untitled.png)
+![naver2](https://user-images.githubusercontent.com/103623292/197124122-c2c5bd6c-0d04-4cf1-9e51-959b8d275d31.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e4798443-ee89-4cc1-bc55-53ad50913b26/Untitled.png)
+![naver3](https://user-images.githubusercontent.com/103623292/197124125-375374d4-01df-42ee-abcd-ba61e35a7621.png)
 
 - 회원가입한 아이디와 비밀번호로 로그인이 성공한다면 사이트 왼쪽 사이드 바에 회원 프로필과 닉네임이 표출된다.
 - 네이버 로그인 회원일 경우 네이버에서 프로필 사진과 닉네임 데이터를 받아와서  사이트에 표출한다.
@@ -174,11 +174,11 @@ RequestMapping에 따라 Naver로그인 회원은 session.setAttribute(”login�
 
 ### 회원 정보 찾기 기능
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a75b3e55-f722-464a-93d0-27dc28d0bc08/Untitled.png)
+![find1](https://user-images.githubusercontent.com/103623292/197124106-b8f4d97c-428d-4d0f-b7c7-eac4204eb6fe.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f10d1933-818c-4660-96cf-3937ef4f6901/Untitled.png)
+![find2](https://user-images.githubusercontent.com/103623292/197124107-8413f07b-f05b-465e-96b5-1dced9aa7b89.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8026708c-b145-492b-acde-d453f3d44551/Untitled.png)
+![find3](https://user-images.githubusercontent.com/103623292/197124109-a9a3efcc-a740-4e39-a651-0cad21b8c6c7.png)
 
 - 로그인 정보를 잊어버린 회원을 위한 아이디 , 비밀번호 찾기 기능 구현
 - 회원가입 시 입력했던 이름, 전화번호, 이메일 주소를 맞게 입력한다면 AJax로 DB와 데이터를 비교하여 바로 아이디를 확인할 수 있다.
@@ -187,7 +187,7 @@ RequestMapping에 따라 Naver로그인 회원은 session.setAttribute(”login�
 
 ### 회원 정보 수정 기능 구현
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1d103d55-3ec3-468d-a601-8b6d20cb912c/Untitled.png)
+![update1](https://user-images.githubusercontent.com/103623292/197124134-ef4c12ce-21e9-4fb9-adc3-505e785d865c.png)
 
 - 회원 정보 수정 시 아이디와 이름은 수정이 불가능하다.
 - 닉네임은 수정할 수 있으며, 중복 닉네임은 설정이 불가능하다.
@@ -196,7 +196,7 @@ RequestMapping에 따라 Naver로그인 회원은 session.setAttribute(”login�
 
 ### 회원 탈퇴 기능 구현
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6216e260-a29a-4380-8c55-7b54cffb2987/Untitled.png)
+![delete1](https://user-images.githubusercontent.com/103623292/197124103-e774619e-65a3-463a-954c-80343cdd90f9.png)
 
 - 회원 탈퇴 시 비밀번호를 다시 한번 입력하여야 한다.
 - 최종 탈퇴를 확인하는 Alert 창이 띄워진다
@@ -206,7 +206,7 @@ RequestMapping에 따라 Naver로그인 회원은 session.setAttribute(”login�
 
 ### 강남 지역 주차장 위치 표시 및 검색 기능 구현
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fe185a05-cec1-4ee0-abf7-57c2b02eb1f1/Untitled.png)
+![map1](https://user-images.githubusercontent.com/103623292/197124119-ccf22189-6cab-470f-8935-fb9734c6821a.png)
 
 - 네이버 지도 API 에 강남지역 주차장 위치를 서울 열린데이터 광장 API를 활용하여 JSON 데이터를 기반으로 실시간 통신을 통해 마크로 찍어 표현했다.
 - 해당 마크를 클릭하면 주차장 정보가 나온다. 주차장 정보 창의 X를 누르면 화면이 꺼지고, 다른 마크를 클릭한다면 해당 마크에 해당하는 주차장 정보가 표출된다.
@@ -214,7 +214,7 @@ RequestMapping에 따라 Naver로그인 회원은 session.setAttribute(”login�
 
 ## 5. 사이트 커뮤니티 게시판 구현 - 박혜정
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/655548e0-9b5a-4186-bead-7a7886a2d95e/Untitled.png)
+![board1](https://user-images.githubusercontent.com/103623292/197124095-1e8e8979-26fb-4309-b6c3-659325c9b1d8.png)
 
 - 사이트의 자유게시판, 후기게시판 구현
 - 각 게시판에는 로그인 한 회원만 글을 쓸 수 있다.
@@ -222,10 +222,6 @@ RequestMapping에 따라 Naver로그인 회원은 session.setAttribute(”login�
 - 작성한 글이나 댓글을 수정, 삭제 할 수 있다.
 
 ## 프로젝트 후기
-
-:)
-
-
 테스트협업
 이번 프로젝트를 하면서 가장 많이 쓴 의존주입은 필드주입.
 그러나 추가로 공부를 하면서 느낀 것은 가장 안좋은 방식의 의존주입을 사용한 것.
